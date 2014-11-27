@@ -10,6 +10,7 @@ class InstagramServiceProvider extends ServiceProvider {
 	 * @var bool
 	 */
 	protected $defer = false;
+
 	/**
 	 * Register the service provider.
 	 *

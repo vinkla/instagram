@@ -1,4 +1,4 @@
-<?php namespace Vinkla\Vimeo;
+<?php namespace Vinkla\Instagram;
 
 use MetzWeb\Instagram\Instagram as Api;
 
