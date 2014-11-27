@@ -21,13 +21,22 @@ class InstagramServiceProvider extends ServiceProvider {
 		// Register 'Instagram' instance container to our Instagram object.
 		$this->app->bindShared('Vinkla\Instagram\Contracts\Instagram', function($app)
 		{
-			return new Instagram(
+			if (
+				empty($app['config']['instagram::client_secret']) &&
+				empty($app['config']['instagram::callback_url'])
+			)
+			{
+				return new Instagram($app['config']['instagram::client_id']);
+			}
+
+			return new Instagram([
 				$app['config']['instagram::client_id'],
 				$app['config']['instagram::client_secret'],
-				$app['config']['instagram::callback']
-			);
+				$app['config']['instagram::callback_url']
+			]);
 		});
 	}
+
 	/**
 	 * Bootstrap the application events.
 	 *
@@ -37,6 +46,7 @@ class InstagramServiceProvider extends ServiceProvider {
 	{
 		$this->package('vinkla/instagram');
 	}
+
 	/**
 	 * Get the services provided by the provider.
 	 *
