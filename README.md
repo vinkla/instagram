@@ -3,6 +3,20 @@ Laravel Instagram
 
 Laravel wrapper for the Instagram API. Read more about the [API class repository](https://github.com/cosenary/Instagram-PHP-API).
 
+```php
+// Fetching data.
+$instagram->getUserFeed(30);
+
+// Get popular media.
+$instagram->getPopularMedia();
+
+// Wanna use the facade?
+Instagram::searchMedia(48.1454418, 11.5686003);
+```
+
+[![Latest Stable Version](http://img.shields.io/packagist/v/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
+[![License](https://img.shields.io/packagist/l/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
+
 ## Installation
 Require this package in your `composer.json` and update composer. 
 
