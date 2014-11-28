@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel wrapper for the Instagram API made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). Read more about the [API in its repository](https://github.com/cosenary/Instagram-PHP-API).
+Laravel wrapper for the Instagram API made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). [Read more about the API.](https://github.com/cosenary/Instagram-PHP-API)
 
 ```php
 // Fetching data.
