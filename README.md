@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel wrapper for the Instagram API. Read more about the [API class repository](https://github.com/cosenary/Instagram-PHP-API).
+Laravel wrapper for the Instagram API made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). Read more about the [API in its repository](https://github.com/cosenary/Instagram-PHP-API).
 
 ```php
 // Fetching data.
@@ -20,7 +20,7 @@ Instagram::searchMedia(48.1454418, 11.5686003);
 [![License](https://img.shields.io/packagist/l/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
 
 ## Installation
-Require this package in your `composer.json` and update composer. 
+Require this package in your `composer.json` and update composer.
 
 ```json
 {
