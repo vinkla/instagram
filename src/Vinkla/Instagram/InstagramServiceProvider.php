@@ -29,11 +29,11 @@ class InstagramServiceProvider extends ServiceProvider {
 				return new Instagram($app['config']['instagram::client_id']);
 			}
 
-			return new Instagram([
-				$app['config']['instagram::client_id'],
-				$app['config']['instagram::client_secret'],
-				$app['config']['instagram::callback_url']
-			]);
+			return new Instagram(array(
+				'apiKey' => $app['config']['instagram::client_id'],
+				'apiSecret' => $app['config']['instagram::client_secret'],
+				'apiCallback' => $app['config']['instagram::callback_url']
+			));
 		});
 	}
 
