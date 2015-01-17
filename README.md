@@ -47,7 +47,7 @@ php artisan publish:config vinkla/instagram
 ```
 
 ## Documentation
-The original [API documentation](https://github.com/cosenary/Instagram-PHP-API) is located in [@cosenary's repository](https://github.com/cosenary/Instagram-PHP-API). There you can find [example snippets and tutorials](https://github.com/cosenary/Instagram-PHP-API#more-examples-and-tutorials).
+The original [API documentation](https://github.com/cosenary/Instagram-PHP-API) is located in [@cosenary's repository](https://github.com/cosenary/Instagram-PHP-API). There you can read more about [example snippets and tutorials](https://github.com/cosenary/Instagram-PHP-API#more-examples-and-tutorials).
 
 ## License
 
