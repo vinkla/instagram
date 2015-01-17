@@ -46,6 +46,9 @@ To add the configuration file to your `app/config/packages` directory, run the c
 php artisan publish:config vinkla/instagram
 ```
 
+## Documentation
+The original [API documentation](https://github.com/cosenary/Instagram-PHP-API) is located in [@cosenary's repository](https://github.com/cosenary/Instagram-PHP-API). There you can find [example snippets and tutorials](https://github.com/cosenary/Instagram-PHP-API#more-examples-and-tutorials).
+
 ## License
 
 The Laravel Instagram package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
