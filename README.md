@@ -23,7 +23,7 @@ Instagram::searchMedia(48.1454418, 11.5686003);
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
-composer require vinkla/instagram:~1.0
+composer require vinkla/instagram:~2.0
 ```
 
 Add the service provider to ```config/app.php``` in the providers array.
@@ -32,15 +32,17 @@ Add the service provider to ```config/app.php``` in the providers array.
 'Vinkla\Instagram\InstagramServiceProvider'
 ```
 
-If you want you can use the [facade](http://laravel.com/docs/4.2/facades). Add the reference in ```config/app.php``` to your aliases array.
+If you want you can use the [facade](http://laravel.com/docs/facades). Add the reference in ```config/app.php``` to your aliases array.
 ```php
 'Instagram' => 'Vinkla\Instagram\Facades\Instagram'
 ```
 
-To add the configuration file to your `app/config/packages` directory, run the command below.
+To add the configuration file to your `config` directory, run the command below.
 ```bash
-php artisan publish:config vinkla/instagram
+php artisan vendor:publish
 ```
+
+Looking for Laravel 4 support? Please use version `~1.0` instead.
 
 ## Documentation
 The original [API documentation](https://github.com/cosenary/Instagram-PHP-API) is located in [@cosenary's repository](https://github.com/cosenary/Instagram-PHP-API). There you can read more about [example snippets and tutorials](https://github.com/cosenary/Instagram-PHP-API#more-examples-and-tutorials).
