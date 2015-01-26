@@ -20,14 +20,10 @@ Instagram::searchMedia(48.1454418, 11.5686003);
 [![License](https://img.shields.io/packagist/l/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
 
 ## Installation
-Require this package in your `composer.json` and update composer.
+Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
-```json
-{
-	"require": {
-		"vinkla/instagram": "~1.0"
-	}
-}
+```bash
+composer require vinkla/instagram:~1.0
 ```
 
 Add the service provider to ```config/app.php``` in the providers array.
