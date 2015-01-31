@@ -5,11 +5,18 @@ use Illuminate\Support\ServiceProvider;
 class InstagramServiceProvider extends ServiceProvider {
 
 	/**
-	 * Indicates if loading of the provider is deferred.
+	 * Boot the service provider.
 	 *
-	 * @var bool
+	 * @return void
 	 */
-	protected $defer = false;
+	public function boot()
+	{
+		$source = sprintf('%s/../../config/instagram.php', __DIR__);
+
+		$this->publishes([$source => config_path('instagram.php')]);
+
+		$this->mergeConfigFrom($source, 'instagram.php');
+	}
 
 	/**
 	 * Register the service provider.
@@ -18,11 +25,6 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$source = sprintf('%s/../../config/config.php', __DIR__);
-		$destination = config_path('instagram.php');
-
-		$this->publishes([$source => $destination]);
-
 		$this->app->singleton('Vinkla\Instagram\Contracts\Instagram', function()
 		{
 			if (!config('instagram.client_secret') && !config('instagram.callback_url'))
