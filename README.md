@@ -92,6 +92,27 @@ Instagram::getUserLikes();
 // This example is simple, and there are far more methods available.
 ```
 
+The Instagram manager will behave like it is a `MetzWeb\Instagram\Instagram`. If you want to call specific connections, you can do with the connection method:
+
+```php
+use Vinkla\Instagram\Facades\Instagram;
+
+// Writing this…
+Instagram::connection('main')->getUserLikes();
+
+// …is identical to writing this
+Instagram::getUserLikes();
+
+// and is also identical to writing this.
+Instagram::connection()->getUserLikes();
+
+// This is because the main connection is configured to be the default.
+Instagram::getDefaultConnection(); // This will return main.
+
+// We can change the default connection.
+Instagram::setDefaultConnection('alternative'); // The default is now alternative.
+```
+
 If you prefer to use dependency injection over facades like me, then you can inject the manager:
 
 ```php
