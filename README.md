@@ -51,25 +51,25 @@ php artisan vendor:publish
 
 This will create a `config/instagram.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
 
-### Default Connection Name
+#### Default Connection Name
 
 This option `default` is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is 'main'.
 
-### Instagram Connections
+#### Instagram Connections
 
 This option `connections` is where each of the connections are setup for your application. Example configuration has been included, but you may add as many connections as you would like.
 
 ## Usage
 
-### InstagramManager
+#### InstagramManager
 
 This is the class of most interest. It is bound to the ioc container as `instagram` and can be accessed using the Facades\Instagram facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of [@GrahamCampbell](https://github.com/GrahamCampbell) [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at that repository. Note that the connection class returned will always be an instance of `MetzWeb\Instagram\Instagram`.
 
-### Facades\Instagram
+#### Facades\Instagram
 
 This facade will dynamically pass static method calls to the 'instagram' object in the ioc container which by default is the InstagramManager class.
 
-### InstagramServiceProvider
+#### InstagramServiceProvider
 
 This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
@@ -85,6 +85,29 @@ Instagram::setAccessToken($data);
 
 Instagram::getUserLikes();
 // This example is simple, and there are far more methods available.
+```
+
+If you prefer to use dependency injection over facades like me, then you can inject the manager:
+
+```php
+use Vinkla\Instagram\InstagramManager;
+
+class Foo
+{
+	protected $instagram;
+
+	public function __construct(InstagramManager $instagram)
+	{
+		$this->instagram = $instagram;
+	}
+
+	public function bar()
+	{
+		$this->instagram->getPopularMedia();
+	}
+}
+
+App::make('Foo')->bar();
 ```
 
 ## Documentation
