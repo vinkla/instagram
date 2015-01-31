@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel Instagram is a Instagram bridge for Laravel 5. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). Read more in [the API documentation](https://github.com/cosenary/Instagram-PHP-API).
+Laravel Instagram is a Instagram bridge for Laravel 5. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API).
 
 ```php
 // Fetching data.
@@ -69,11 +69,11 @@ This option `connections` is where each of the connections are setup for your ap
 
 #### InstagramManager
 
-This is the class of most interest. It is bound to the ioc container as `instagram` and can be accessed using the Facades\Instagram facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of [@GrahamCampbell](https://github.com/GrahamCampbell) [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at that repository. Note that the connection class returned will always be an instance of `MetzWeb\Instagram\Instagram`.
+This is the class of most interest. It is bound to the ioc container as `instagram` and can be accessed using the `Facades\Instagram` facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of [@GrahamCampbell Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at that repository. Note that the connection class returned will always be an instance of `MetzWeb\Instagram\Instagram`.
 
 #### Facades\Instagram
 
-This facade will dynamically pass static method calls to the 'instagram' object in the ioc container which by default is the InstagramManager class.
+This facade will dynamically pass static method calls to the 'instagram' object in the ioc container which by default is the `InstagramManager` class.
 
 #### InstagramServiceProvider
 
@@ -117,7 +117,7 @@ App::make('Foo')->bar();
 ```
 
 ## Documentation
-There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [@cosenary](https://github.com/cosenary)'s [Instagram API package](https://github.com/cosenary/Instagram-PHP-API).
+There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [@cosenary's Instagram API package](https://github.com/cosenary/Instagram-PHP-API).
 
 ## License
 
