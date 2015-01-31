@@ -12,16 +12,21 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4.0",
-		"cosenary/instagram": "~2.0",
-		"illuminate/support": "~5.0"
+		"php": ">=5.4.7",
+		"illuminate/support": "~5.0",
+		"cosenary/instagram": "~2.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~4.0"
+		"graham-campbell/testbench": "~2.0"
 	},
 	"autoload": {
 		"psr-4": {
 			"Vinkla\\Instagram\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Vinkla\\Tests\\Instagram\\": "tests/"
 		}
 	},
 	"minimum-stability": "dev",
