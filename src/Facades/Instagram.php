@@ -11,7 +11,7 @@ class Instagram extends Facade {
 	 */
 	protected static function getFacadeAccessor()
 	{
-		return 'Vinkla\Instagram\Contracts\Instagram';
+		return 'instagram';
 	}
 
 }

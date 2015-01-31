@@ -11,11 +11,11 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$source = sprintf('%s/../../config/instagram.php', __DIR__);
+		$source = realpath(__DIR__.'/../config/instagram.php');
 
 		$this->publishes([$source => config_path('instagram.php')]);
 
-		$this->mergeConfigFrom($source, 'instagram.php');
+		$this->mergeConfigFrom($source, 'instagram');
 	}
 
 	/**
@@ -25,7 +25,7 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton('Vinkla\Instagram\Contracts\Instagram', function()
+		$this->app->singleton('instagram', function()
 		{
 			if (!config('instagram.client_secret') && !config('instagram.callback_url'))
 			{
@@ -38,6 +38,8 @@ class InstagramServiceProvider extends ServiceProvider {
 				'apiCallback' => config('instagram.callback_url')
 			]);
 		});
+
+		$this->app->alias('instagram', 'Vinkla\Instagram\Instagram');
 	}
 
 	/**
@@ -47,7 +49,7 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return ['Vinkla\Instagram\Contracts\Instagram'];
+		return ['instagram'];
 	}
 
 }

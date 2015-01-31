@@ -3,7 +3,7 @@
 	"description": "Laravel wrapper for the Instagram API.",
 	"homepage": "https://github.com/vinkla/instagram",
 	"license": "MIT",
-	"keywords": ["laravel", "instagram", "images", "api"],
+	"keywords": ["laravel", "instagram", "images", "api", "image", "media", "facebook"],
 	"authors": [
 		{
 			"name": "Vincent Klaiber",
@@ -24,5 +24,6 @@
 			"Vinkla\\Instagram\\": "src/"
 		}
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"prefer-stable": true
 }
