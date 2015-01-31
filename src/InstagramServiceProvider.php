@@ -1,7 +1,7 @@
 <?php namespace Vinkla\Instagram;
 
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use MetzWeb\Instagram\Instagram;
 
 class InstagramServiceProvider extends ServiceProvider {
 
@@ -12,10 +12,18 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+		$this->setupConfig();
+	}
+
+	/**
+	 * Setup the config.
+	 *
+	 * @return void
+	 */
+	protected function setupConfig()
+	{
 		$source = realpath(__DIR__.'/../config/instagram.php');
-
 		$this->publishes([$source => config_path('instagram.php')]);
-
 		$this->mergeConfigFrom($source, 'instagram');
 	}
 
@@ -26,31 +34,57 @@ class InstagramServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton('instagram', function()
-		{
-			if (!config('instagram.client_secret') && !config('instagram.callback_url'))
-			{
-				return new Instagram(config('instagram.client_id'));
-			}
+		$this->registerFactory($this->app);
+		$this->registerManager($this->app);
+	}
 
-			return new Instagram([
-				'apiKey' => config('instagram.client_id'),
-				'apiSecret' => config('instagram.client_secret'),
-				'apiCallback' => config('instagram.callback_url')
-			]);
+	/**
+	 * Register the factory class.
+	 *
+	 * @param \Illuminate\Contracts\Foundation\Application $app
+	 *
+	 * @return void
+	 */
+	protected function registerFactory(Application $app)
+	{
+		$app->singleton('instagram.factory', function()
+		{
+			return new Factories\InstagramFactory();
+		});
+		$app->alias('instagram.factory', 'Vinkla\Instagram\Factories\InstagramFactory');
+	}
+
+	/**
+	 * Register the manager class.
+	 *
+	 * @param \Illuminate\Contracts\Foundation\Application $app
+	 *
+	 * @return void
+	 */
+	protected function registerManager(Application $app)
+	{
+		$app->singleton('instagram', function($app)
+		{
+			$config = $app['config'];
+			$factory = $app['instagram.factory'];
+
+			return new InstagramManager($config, $factory);
 		});
 
-		$this->app->alias('instagram', 'MetzWeb\Instagram\Instagram');
+		$app->alias('instagram', 'Vinkla\Instagram\InstagramManager');
 	}
 
 	/**
 	 * Get the services provided by the provider.
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function provides()
 	{
-		return ['instagram'];
+		return [
+			'instagram',
+			'instagram.factory'
+		];
 	}
 
 }

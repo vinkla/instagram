@@ -4,40 +4,42 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
-	| Client Identifier
+	| Default Connection Name
 	|--------------------------------------------------------------------------
 	|
-	| Your applications client identifier. Used when generating authentication
-	| tokens and to receive your authorization code. This must always be set
-	| to fetch data from Instagram.
+	| Here you may specify which of the connections below you wish to use as
+	| your default connection for all work. Of course, you may use many
+	| connections at once using the manager class.
 	|
 	*/
 
-	'client_id' => '',
+	'default' => 'main',
 
 	/*
-	|--------------------------------------------------------------------------
-	| Client Secret
-	|--------------------------------------------------------------------------
-	|
-	| Your applications client secret. Used when generating authentication
-	| tokens and to receive your authorization code. Leave this NULL if you
-	| only are going to fetch public data.
-	|
-	*/
+    |--------------------------------------------------------------------------
+    | Instagram Connections
+    |--------------------------------------------------------------------------
+    |
+    | Here are each of the connections setup for your application. Example
+    | configuration has been included, but you may add as many connections as
+    | you would like.
+    |
+    */
 
-	'client_secret' => null,
+	'connections' => [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Callback URL
-	|--------------------------------------------------------------------------
-	|
-	| Your applications callback url. Used to authorize users and generating
-	| tokens. Leave this NULL if you only are going to fetch public data.
-	|
-	*/
+		'main' => [
+			'client_id' => 'your-client-id',
+			'client_secret' => null,
+			'callback_url' => null
+		],
 
-	'callback_url' => null
+		'alternative' => [
+			'client_id' => 'your-client-id',
+			'client_secret' => null,
+			'callback_url' => null
+		],
+
+	]
 
 ];
