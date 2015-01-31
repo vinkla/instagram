@@ -1,6 +1,7 @@
 <?php namespace Vinkla\Instagram;
 
 use Illuminate\Support\ServiceProvider;
+use MetzWeb\Instagram\Instagram;
 
 class InstagramServiceProvider extends ServiceProvider {
 
@@ -39,7 +40,7 @@ class InstagramServiceProvider extends ServiceProvider {
 			]);
 		});
 
-		$this->app->alias('instagram', 'Vinkla\Instagram\Instagram');
+		$this->app->alias('instagram', 'MetzWeb\Instagram\Instagram');
 	}
 
 	/**
