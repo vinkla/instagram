@@ -38,7 +38,13 @@ If you want you can use the [facade](http://laravel.com/docs/facades). Add the r
 'Instagram' => 'Vinkla\Instagram\Facades\Instagram'
 ```
 
-Looking for Laravel 4 support? Please use `1.0` branch instead.
+#### Looking for a laravel 4 compatable version?
+
+Please use `1.0` branch instead. Installable by requiring:
+
+```bash
+composer require "vinkla/instagram=~1.0"
+```
 
 ## Configuration
 
