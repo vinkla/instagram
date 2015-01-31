@@ -72,7 +72,7 @@ This is the class of most interest. It is bound to the ioc container as `instagr
 
 #### Facades\Instagram
 
-This facade will dynamically pass static method calls to the 'instagram' object in the ioc container which by default is the `InstagramManager` class.
+This facade will dynamically pass static method calls to the `instagram` object in the ioc container which by default is the `InstagramManager` class.
 
 #### InstagramServiceProvider
 
