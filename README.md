@@ -48,9 +48,8 @@ composer require "vinkla/instagram=~1.0"
 
 ## Configuration
 
-Laravel Instagram requires connection configuration.
+Laravel Instagram requires connection configuration. To get started, you'll need to publish all vendor assets:
 
-To get started, you'll need to publish all vendor assets:
 ```bash
 php artisan vendor:publish
 ```
