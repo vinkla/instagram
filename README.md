@@ -118,8 +118,7 @@ If you prefer to use dependency injection over facades like me, then you can inj
 ```php
 use Vinkla\Instagram\InstagramManager;
 
-class Foo
-{
+class Foo {
 	protected $instagram;
 
 	public function __construct(InstagramManager $instagram)
