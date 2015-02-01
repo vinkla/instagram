@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel Instagram is a Instagram bridge for Laravel 5. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API).
+Laravel Instagram is an Instagram bridge for Laravel 5. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API).
 
 ```php
 // Fetching data.
@@ -11,7 +11,7 @@ $instagram->getUserFeed(30);
 // Get popular media.
 $instagram->getPopularMedia();
 
-// Wan't to use the facade?
+// Want to use the facade?
 Instagram::searchMedia(48.1454418, 11.5686003);
 ```
 
@@ -58,7 +58,7 @@ This will create a `config/instagram.php` file in your app that you can modify t
 
 #### Default Connection Name
 
-This option `default` is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is 'main'.
+This option `default` is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `main`.
 
 #### Instagram Connections
 
@@ -92,7 +92,7 @@ Instagram::getUserLikes();
 // This example is simple, and there are far more methods available.
 ```
 
-The Instagram manager will behave like it is a `MetzWeb\Instagram\Instagram`. If you want to call specific connections, you can do with the connection method:
+The Instagram manager will behave like it is a `MetzWeb\Instagram\Instagram`. If you want to call specific connections, you can do that with the connection method:
 
 ```php
 use Vinkla\Instagram\Facades\Instagram;
