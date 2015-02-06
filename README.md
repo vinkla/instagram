@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel Instagram is an Instagram bridge for Laravel 5. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API).
+Laravel Instagram is an Instagram bridge for Laravel. Instagram API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). The Laravel 5 wrapper package is created and maintained by [@vinkla](https://github.com/vinkla).
 
 ```php
 // Fetching data.
