@@ -1,10 +1,12 @@
-<?php namespace Vinkla\Tests\Instagram\Facades;
+<?php
+
+namespace Vinkla\Tests\Instagram\Facades;
 
 use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
 use Vinkla\Tests\Instagram\AbstractTestCase;
 
-class InstagramTest extends AbstractTestCase {
-
+class InstagramTest extends AbstractTestCase
+{
 	use FacadeTestCaseTrait;
 
 	/**
@@ -36,5 +38,4 @@ class InstagramTest extends AbstractTestCase {
 	{
 		return 'Vinkla\Instagram\InstagramManager';
 	}
-
 }

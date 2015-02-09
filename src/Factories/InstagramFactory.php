@@ -1,9 +1,11 @@
-<?php namespace Vinkla\Instagram\Factories;
+<?php
+
+namespace Vinkla\Instagram\Factories;
 
 use MetzWeb\Instagram\Instagram;
 
-class InstagramFactory {
-
+class InstagramFactory
+{
 	/**
 	 * Make a new Instagram client.
 	 *
@@ -43,5 +45,4 @@ class InstagramFactory {
 
 		return array_only($config, ['client_id', 'client_secret', 'callback_url']);
 	}
-
 }

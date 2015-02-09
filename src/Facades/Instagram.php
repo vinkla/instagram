@@ -1,9 +1,11 @@
-<?php namespace Vinkla\Instagram\Facades;
+<?php
+
+namespace Vinkla\Instagram\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Instagram extends Facade {
-
+class Instagram extends Facade
+{
 	/**
 	 * Get the registered name of the component.
 	 *
@@ -13,5 +15,4 @@ class Instagram extends Facade {
 	{
 		return 'instagram';
 	}
-
 }

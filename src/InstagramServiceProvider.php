@@ -1,10 +1,12 @@
-<?php namespace Vinkla\Instagram;
+<?php
+
+namespace Vinkla\Instagram;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-class InstagramServiceProvider extends ServiceProvider {
-
+class InstagramServiceProvider extends ServiceProvider
+{
 	/**
 	 * Boot the service provider.
 	 *
@@ -51,6 +53,7 @@ class InstagramServiceProvider extends ServiceProvider {
 		{
 			return new Factories\InstagramFactory();
 		});
+
 		$app->alias('instagram.factory', 'Vinkla\Instagram\Factories\InstagramFactory');
 	}
 
@@ -86,5 +89,4 @@ class InstagramServiceProvider extends ServiceProvider {
 			'instagram.factory'
 		];
 	}
-
 }

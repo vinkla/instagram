@@ -1,10 +1,12 @@
-<?php namespace Vinkla\Tests\Instagram\Factories;
+<?php
+
+namespace Vinkla\Tests\Instagram\Factories;
 
 use Vinkla\Instagram\Factories\InstagramFactory;
 use Vinkla\Tests\Instagram\AbstractTestCase;
 
-class InstagramFactoryTest extends AbstractTestCase {
-
+class InstagramFactoryTest extends AbstractTestCase
+{
 	public function testMakeStandard()
 	{
 		$factory = $this->getInstagramFactory();
@@ -32,5 +34,4 @@ class InstagramFactoryTest extends AbstractTestCase {
 	{
 		return new InstagramFactory();
 	}
-
 }

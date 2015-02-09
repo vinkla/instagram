@@ -1,11 +1,13 @@
-<?php namespace Vinkla\Tests\Instagram;
+<?php
+
+namespace Vinkla\Tests\Instagram;
 
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Mockery;
 use Vinkla\Instagram\InstagramManager;
 
-class InstagramManagerTest extends AbstractTestBenchTestCase {
-
+class InstagramManagerTest extends AbstractTestBenchTestCase
+{
 	public function testCreateConnection()
 	{
 		$config = ['path' => __DIR__];
@@ -41,5 +43,4 @@ class InstagramManagerTest extends AbstractTestBenchTestCase {
 
 		return $manager;
 	}
-
 }

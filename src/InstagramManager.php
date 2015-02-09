@@ -1,11 +1,13 @@
-<?php namespace Vinkla\Instagram;
+<?php
+
+namespace Vinkla\Instagram;
 
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
 use Vinkla\Instagram\Factories\InstagramFactory;
 
-class InstagramManager extends AbstractManager {
-
+class InstagramManager extends AbstractManager
+{
 	/**
 	 * @var InstagramFactory
 	 */
@@ -53,5 +55,4 @@ class InstagramManager extends AbstractManager {
 	{
 		return $this->factory;
 	}
-
 }
