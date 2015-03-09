@@ -2,20 +2,20 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Connection Name
-	|--------------------------------------------------------------------------
-	|
-	| Here you may specify which of the connections below you wish to use as
-	| your default connection for all work. Of course, you may use many
-	| connections at once using the manager class.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Default Connection Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which of the connections below you wish to use as
+    | your default connection for all work. Of course, you may use many
+    | connections at once using the manager class.
+    |
+    */
 
-	'default' => 'main',
+    'default' => 'main',
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | Instagram Connections
     |--------------------------------------------------------------------------
@@ -26,20 +26,20 @@ return [
     |
     */
 
-	'connections' => [
+    'connections' => [
 
-		'main' => [
-			'client_id' => 'your-client-id',
-			'client_secret' => null,
-			'callback_url' => null
-		],
+        'main' => [
+            'client_id' => 'your-client-id',
+            'client_secret' => null,
+            'callback_url' => null
+        ],
 
-		'alternative' => [
-			'client_id' => 'your-client-id',
-			'client_secret' => null,
-			'callback_url' => null
-		],
+        'alternative' => [
+            'client_id' => 'your-client-id',
+            'client_secret' => null,
+            'callback_url' => null
+        ],
 
-	]
+    ]
 
 ];

@@ -6,15 +6,15 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
 
 class ServiceProviderTest extends AbstractTestCase
 {
-	use ServiceProviderTestCaseTrait;
+    use ServiceProviderTestCaseTrait;
 
-	public function testInstagramFactoryIsInjectable()
-	{
-		$this->assertIsInjectable('Vinkla\Instagram\Factories\InstagramFactory');
-	}
+    public function testInstagramFactoryIsInjectable()
+    {
+        $this->assertIsInjectable('Vinkla\Instagram\Factories\InstagramFactory');
+    }
 
-	public function testInstagramManagerIsInjectable()
-	{
-		$this->assertIsInjectable('Vinkla\Instagram\InstagramManager');
-	}
+    public function testInstagramManagerIsInjectable()
+    {
+        $this->assertIsInjectable('Vinkla\Instagram\InstagramManager');
+    }
 }

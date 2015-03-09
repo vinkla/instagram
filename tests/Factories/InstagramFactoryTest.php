@@ -7,31 +7,31 @@ use Vinkla\Tests\Instagram\AbstractTestCase;
 
 class InstagramFactoryTest extends AbstractTestCase
 {
-	public function testMakeStandard()
-	{
-		$factory = $this->getInstagramFactory();
+    public function testMakeStandard()
+    {
+        $factory = $this->getInstagramFactory();
 
-		$return = $factory->make([
-			'client_id' => 'your-client-id',
-			'client_secret' => null,
-			'callback_url' => null
-		]);
+        $return = $factory->make([
+            'client_id' => 'your-client-id',
+            'client_secret' => null,
+            'callback_url' => null
+        ]);
 
-		$this->assertInstanceOf('MetzWeb\Instagram\Instagram', $return);
-	}
+        $this->assertInstanceOf('MetzWeb\Instagram\Instagram', $return);
+    }
 
-	/**
-	 * @expectedException \InvalidArgumentException
-	 */
-	public function testMakeWithoutClientId()
-	{
-		$factory = $this->getInstagramFactory();
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testMakeWithoutClientId()
+    {
+        $factory = $this->getInstagramFactory();
 
-		$factory->make([]);
-	}
+        $factory->make([]);
+    }
 
-	protected function getInstagramFactory()
-	{
-		return new InstagramFactory();
-	}
+    protected function getInstagramFactory()
+    {
+        return new InstagramFactory();
+    }
 }
