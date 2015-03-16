@@ -34,7 +34,7 @@ class InstagramFactory
      *
      * @throws \InvalidArgumentException
      *
-     * @return string
+     * @return array
      */
     protected function getConfig(array $config)
     {
