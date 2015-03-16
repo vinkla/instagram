@@ -39,7 +39,7 @@ class InstagramFactory
     protected function getConfig(array $config)
     {
         if (!array_key_exists('client_id', $config)) {
-            throw new \InvalidArgumentException('The Instagram client requires authentication.');
+            throw new \InvalidArgumentException('The Instagram client requires configuration.');
         }
 
         return array_only($config, ['client_id', 'client_secret', 'callback_url']);
