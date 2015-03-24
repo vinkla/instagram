@@ -1,11 +1,25 @@
 <?php
 
+/*
+ * This file is part of Laravel Instagram.
+ *
+ * (c) Vincent Klaiber <hello@vinkla.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Vinkla\Instagram;
 
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
 use Vinkla\Instagram\Factories\InstagramFactory;
 
+/**
+ * This is the Instagram manager class.
+ *
+ * @author Vincent Klaiber <hello@vinkla.com>
+ */
 class InstagramManager extends AbstractManager
 {
     /**
