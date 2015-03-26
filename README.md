@@ -142,4 +142,4 @@ There are other classes in this package that are not documented here. This is be
 
 ## License
 
-The Laravel Instagram package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Laravel Instagram is licensed under [The MIT License (MIT)](LICENSE).
