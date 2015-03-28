@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [@vinkla](https://github.com/vinkla).
+Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [Vincent Klaiber](https://github.com/vinkla).
 
 ```php
 // Fetching data.
