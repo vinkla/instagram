@@ -2,7 +2,7 @@ Laravel Instagram
 =================
 ![image](https://raw.githubusercontent.com/vinkla/vinkla.github.io/master/images/laravel-instagram.png)
 
-Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [@cosenary](https://github.com/cosenary/Instagram-PHP-API). The Laravel 5 wrapper package is created and maintained by [@vinkla](https://github.com/vinkla).
+Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [@vinkla](https://github.com/vinkla).
 
 ```php
 // Fetching data.
@@ -138,7 +138,7 @@ App::make('Foo')->bar();
 ```
 
 ## Documentation
-There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [@cosenary's Instagram API package](https://github.com/cosenary/Instagram-PHP-API).
+There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [Christian Metz's](https://github.com/cosenary) [Instagram API package](https://github.com/cosenary/Instagram-PHP-API).
 
 ## License
 
