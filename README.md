@@ -24,7 +24,7 @@ Instagram::searchMedia(48.1454418, 11.5686003);
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ```bash
-composer require vinkla/instagram:~2.0
+composer require vinkla/instagram
 ```
 
 Add the service provider to ```config/app.php``` in the `providers` array.
