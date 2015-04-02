@@ -39,7 +39,7 @@ If you want you can use the [facade](http://laravel.com/docs/4.2/facades). Add t
 
 To add the configuration file to your `app/config/packages` directory, run the command below.
 ```bash
-php artisan publish:config vinkla/instagram
+php artisan config:publish vinkla/instagram
 ```
 
 ## Documentation
