@@ -86,9 +86,16 @@ Here you can see an example of just how simple this package is to use. Out of th
 // You can alias this in config/app.php.
 use Vinkla\Instagram\Facades\Instagram;
 
-Instagram::setAccessToken($data);
-// We're done here - how easy was that, it just works!
+// Get code parameter.
+$code = Request::get('code');
 
+// Request the access token.
+$data = Instagram::getOAuthToken($code);
+
+// Set the access token with $data object.
+Instagram::setAccessToken($data);
+
+// We're done here - how easy was that, it just works!
 Instagram::getUserLikes();
 // This example is simple, and there are far more methods available.
 ```
