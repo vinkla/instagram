@@ -39,7 +39,9 @@ class InstagramServiceProvider extends ServiceProvider
     protected function setupConfig()
     {
         $source = realpath(__DIR__.'/../config/instagram.php');
+
         $this->publishes([$source => config_path('instagram.php')]);
+
         $this->mergeConfigFrom($source, 'instagram');
     }
 
