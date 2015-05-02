@@ -24,21 +24,14 @@ class InstagramFactory
      * Make a new Instagram client.
      *
      * @param array $config
-     * @return Instagram
+     *
+     * @return \MetzWeb\Instagram\Instagram
      */
     public function make(array $config)
     {
         $config = $this->getConfig($config);
 
-        if ($config['client_secret'] && $config['callback_url']) {
-            return new Instagram([
-                'apiKey' => $config['client_id'],
-                'apiSecret' => $config['client_secret'],
-                'apiCallback' => $config['callback_url']
-            ]);
-        }
-
-        return new Instagram($config['client_id']);
+        return $this->getClient($config);
     }
 
     /**
@@ -57,5 +50,25 @@ class InstagramFactory
         }
 
         return array_only($config, ['client_id', 'client_secret', 'callback_url']);
+    }
+
+    /**
+     * Get the pusher client.
+     *
+     * @param string[] $auth
+     *
+     * @return \Pusher
+     */
+    protected function getClient(array $auth)
+    {
+        if ($auth['client_secret'] && $auth['callback_url']) {
+            return new Instagram([
+                'apiKey' => $auth['client_id'],
+                'apiSecret' => $auth['client_secret'],
+                'apiCallback' => $auth['callback_url']
+            ]);
+        }
+
+        return new Instagram($auth['client_id']);
     }
 }

@@ -23,13 +23,19 @@ use Vinkla\Instagram\Factories\InstagramFactory;
 class InstagramManager extends AbstractManager
 {
     /**
+     * The factory instance.
+     *
      * @var InstagramFactory
      */
     private $factory;
 
     /**
-     * @param Repository $config
-     * @param InstagramFactory $factory
+     * Create a new Instagram manager instance.
+     *
+     * @param \Illuminate\Contracts\Config\Repository $config
+     * @param \Vinkla\Instagram\Factories\InstagramFactory $factory
+     *
+     * @return void
      */
     public function __construct(Repository $config, InstagramFactory $factory)
     {
@@ -63,7 +69,7 @@ class InstagramManager extends AbstractManager
     /**
      * Get the factory instance.
      *
-     * @return InstagramFactory
+     * @return \Vinkla\Instagram\Factories\InstagramFactory
      */
     public function getFactory()
     {

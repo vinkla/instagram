@@ -41,7 +41,10 @@ class InstagramFactoryTest extends AbstractTestCase
     {
         $factory = $this->getInstagramFactory();
 
-        $factory->make([]);
+        $factory->make([
+            'client_secret' => null,
+            'callback_url' => null
+        ]);
     }
 
     protected function getInstagramFactory()
