@@ -40,14 +40,6 @@ If you want you can use the [facade](http://laravel.com/docs/facades). Add the r
 'Instagram' => 'Vinkla\Instagram\Facades\Instagram'
 ```
 
-#### Looking for a Laravel 4 compatible version?
-
-Please use [1.0 branch](https://github.com/vinkla/instagram/tree/1.0) instead. Installable by requiring:
-
-```bash
-composer require vinkla/instagram:~1.0
-```
-
 ## Configuration
 
 Laravel Instagram requires connection configuration. To get started, you'll need to publish all vendor assets:
