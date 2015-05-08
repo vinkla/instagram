@@ -28,7 +28,7 @@ class InstagramFactoryTest extends AbstractTestCase
         $return = $factory->make([
             'client_id' => 'your-client-id',
             'client_secret' => null,
-            'callback_url' => null
+            'callback_url' => null,
         ]);
 
         $this->assertInstanceOf('MetzWeb\Instagram\Instagram', $return);
@@ -43,7 +43,7 @@ class InstagramFactoryTest extends AbstractTestCase
 
         $factory->make([
             'client_secret' => null,
-            'callback_url' => null
+            'callback_url' => null,
         ]);
     }
 

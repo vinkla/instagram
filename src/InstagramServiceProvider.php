@@ -100,7 +100,7 @@ class InstagramServiceProvider extends ServiceProvider
     {
         return [
             'instagram',
-            'instagram.factory'
+            'instagram.factory',
         ];
     }
 }

@@ -40,15 +40,15 @@ return [
         'main' => [
             'client_id' => 'your-client-id',
             'client_secret' => null,
-            'callback_url' => null
+            'callback_url' => null,
         ],
 
         'alternative' => [
             'client_id' => 'your-client-id',
             'client_secret' => null,
-            'callback_url' => null
+            'callback_url' => null,
         ],
 
-    ]
+    ],
 
 ];

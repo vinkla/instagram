@@ -65,7 +65,7 @@ class InstagramFactory
             return new Instagram([
                 'apiKey' => $auth['client_id'],
                 'apiSecret' => $auth['client_secret'],
-                'apiCallback' => $auth['callback_url']
+                'apiCallback' => $auth['callback_url'],
             ]);
         }
 
