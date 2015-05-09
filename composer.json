@@ -1,6 +1,6 @@
 {
 	"name": "vinkla/instagram",
-	"description": "Laravel wrapper for the Instagram API.",
+	"description": "A Instagram bridge for Laravel",
 	"license": "MIT",
 	"keywords": ["laravel", "instagram", "images", "api", "image", "media", "facebook"],
 	"authors": [
