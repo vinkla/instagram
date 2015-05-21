@@ -81,6 +81,8 @@ use Vinkla\Instagram\Facades\Instagram;
 
 // Get code parameter.
 $code = Request::get('code');
+//if done on a controller
+$code = $request->input('code');
 
 // Request the access token.
 $data = Instagram::getOAuthToken($code);
