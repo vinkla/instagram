@@ -40,7 +40,9 @@ class InstagramServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/instagram.php');
 
-        $this->publishes([$source => config_path('instagram.php')]);
+        if (class_exists('Illuminate\Foundation\Application', false)) {
+            $this->publishes([$source => config_path('hashids.php')]);
+        }
 
         $this->mergeConfigFrom($source, 'instagram');
     }
