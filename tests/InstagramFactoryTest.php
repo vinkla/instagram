@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Vinkla\Tests\Instagram\Factories;
+namespace Vinkla\Tests\Instagram;
 
-use Vinkla\Instagram\Factories\InstagramFactory;
+use Vinkla\Instagram\InstagramFactory;
 use Vinkla\Tests\Instagram\AbstractTestCase;
 
 /**

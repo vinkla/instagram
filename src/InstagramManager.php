@@ -13,7 +13,7 @@ namespace Vinkla\Instagram;
 
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
-use Vinkla\Instagram\Factories\InstagramFactory;
+use Vinkla\Instagram\InstagramFactory;
 
 /**
  * This is the Instagram manager class.
@@ -33,7 +33,7 @@ class InstagramManager extends AbstractManager
      * Create a new Instagram manager instance.
      *
      * @param \Illuminate\Contracts\Config\Repository $config
-     * @param \Vinkla\Instagram\Factories\InstagramFactory $factory
+     * @param \Vinkla\Instagram\InstagramFactory $factory
      *
      * @return void
      */
@@ -69,7 +69,7 @@ class InstagramManager extends AbstractManager
     /**
      * Get the factory instance.
      *
-     * @return \Vinkla\Instagram\Factories\InstagramFactory
+     * @return \Vinkla\Instagram\InstagramFactory
      */
     public function getFactory()
     {

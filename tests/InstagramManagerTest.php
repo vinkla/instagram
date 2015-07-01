@@ -43,7 +43,7 @@ class InstagramManagerTest extends AbstractTestBenchTestCase
     protected function getManager(array $config)
     {
         $repository = Mockery::mock('Illuminate\Contracts\Config\Repository');
-        $factory = Mockery::mock('Vinkla\Instagram\Factories\InstagramFactory');
+        $factory = Mockery::mock('Vinkla\Instagram\InstagramFactory');
 
         $manager = new InstagramManager($repository, $factory);
 

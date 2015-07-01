@@ -24,7 +24,7 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testInstagramFactoryIsInjectable()
     {
-        $this->assertIsInjectable('Vinkla\Instagram\Factories\InstagramFactory');
+        $this->assertIsInjectable('Vinkla\Instagram\InstagramFactory');
     }
 
     public function testInstagramManagerIsInjectable()
