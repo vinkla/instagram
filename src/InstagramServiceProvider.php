@@ -13,6 +13,7 @@ namespace Vinkla\Instagram;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use MetzWeb\Instagram\Instagram;
 
 /**
  * This is the Instagram service provider class.
@@ -56,6 +57,7 @@ class InstagramServiceProvider extends ServiceProvider
     {
         $this->registerFactory($this->app);
         $this->registerManager($this->app);
+        $this->registerBindings($this->app);
     }
 
     /**
@@ -94,6 +96,24 @@ class InstagramServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register the bindings.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function registerBindings(Application $app)
+    {
+        $app->bind('instagram.connection', function ($app) {
+            $manager = $app['instagram'];
+
+            return $manager->connection();
+        });
+
+        $app->alias('instagram.connection', Instagram::class);
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return string[]
@@ -103,6 +123,7 @@ class InstagramServiceProvider extends ServiceProvider
         return [
             'instagram',
             'instagram.factory',
+            'instagram.connection',
         ];
     }
 }
