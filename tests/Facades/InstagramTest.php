@@ -11,7 +11,7 @@
 
 namespace Vinkla\Tests\Instagram\Facades;
 
-use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 use Vinkla\Tests\Instagram\AbstractTestCase;
 
 /**
@@ -21,7 +21,7 @@ use Vinkla\Tests\Instagram\AbstractTestCase;
  */
 class InstagramTest extends AbstractTestCase
 {
-    use FacadeTestCaseTrait;
+    use FacadeTrait;
 
     /**
      * Get the facade accessor.
