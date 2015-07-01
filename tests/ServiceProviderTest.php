@@ -12,6 +12,8 @@
 namespace Vinkla\Tests\Instagram;
 
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
+use Vinkla\Instagram\InstagramFactory;
+use Vinkla\Instagram\InstagramManager;
 
 /**
  * This is the service provider test class.
@@ -24,11 +26,11 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testInstagramFactoryIsInjectable()
     {
-        $this->assertIsInjectable('Vinkla\Instagram\InstagramFactory');
+        $this->assertIsInjectable(InstagramFactory::class);
     }
 
     public function testInstagramManagerIsInjectable()
     {
-        $this->assertIsInjectable('Vinkla\Instagram\InstagramManager');
+        $this->assertIsInjectable(InstagramManager::class);
     }
 }

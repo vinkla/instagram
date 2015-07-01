@@ -13,7 +13,6 @@ namespace Vinkla\Instagram;
 
 use GrahamCampbell\Manager\AbstractManager;
 use Illuminate\Contracts\Config\Repository;
-use Vinkla\Instagram\InstagramFactory;
 
 /**
  * This is the Instagram manager class.

@@ -12,7 +12,10 @@
 namespace Vinkla\Tests\Instagram;
 
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Illuminate\Contracts\Config\Repository;
+use MetzWeb\Instagram\Instagram;
 use Mockery;
+use Vinkla\Instagram\InstagramFactory;
 use Vinkla\Instagram\InstagramManager;
 
 /**
@@ -35,15 +38,15 @@ class InstagramManagerTest extends AbstractTestBenchTestCase
 
         $return = $manager->connection();
 
-        $this->assertInstanceOf('MetzWeb\Instagram\Instagram', $return);
+        $this->assertInstanceOf(Instagram::class, $return);
 
         $this->assertArrayHasKey('instagram', $manager->getConnections());
     }
 
     protected function getManager(array $config)
     {
-        $repository = Mockery::mock('Illuminate\Contracts\Config\Repository');
-        $factory = Mockery::mock('Vinkla\Instagram\InstagramFactory');
+        $repository = Mockery::mock(Repository::class);
+        $factory = Mockery::mock(InstagramFactory::class);
 
         $manager = new InstagramManager($repository, $factory);
 
@@ -53,7 +56,7 @@ class InstagramManagerTest extends AbstractTestBenchTestCase
         $config['name'] = 'instagram';
 
         $manager->getFactory()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock('MetzWeb\Instagram\Instagram'));
+            ->with($config)->andReturn(Mockery::mock(Instagram::class));
 
         return $manager;
     }

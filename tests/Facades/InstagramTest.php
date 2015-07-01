@@ -12,6 +12,8 @@
 namespace Vinkla\Tests\Instagram\Facades;
 
 use GrahamCampbell\TestBenchCore\FacadeTrait;
+use Vinkla\Instagram\Facades\Instagram;
+use Vinkla\Instagram\InstagramManager;
 use Vinkla\Tests\Instagram\AbstractTestCase;
 
 /**
@@ -40,7 +42,7 @@ class InstagramTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'Vinkla\Instagram\Facades\Instagram';
+        return Instagram::class;
     }
 
     /**
@@ -50,6 +52,6 @@ class InstagramTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'Vinkla\Instagram\InstagramManager';
+        return InstagramManager::class;
     }
 }

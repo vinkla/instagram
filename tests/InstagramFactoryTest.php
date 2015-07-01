@@ -11,8 +11,8 @@
 
 namespace Vinkla\Tests\Instagram;
 
+use MetzWeb\Instagram\Instagram;
 use Vinkla\Instagram\InstagramFactory;
-use Vinkla\Tests\Instagram\AbstractTestCase;
 
 /**
  * This is the Instagram factory test class.
@@ -31,7 +31,7 @@ class InstagramFactoryTest extends AbstractTestCase
             'callback_url' => null,
         ]);
 
-        $this->assertInstanceOf('MetzWeb\Instagram\Instagram', $return);
+        $this->assertInstanceOf(Instagram::class, $return);
     }
 
     /**

@@ -68,10 +68,10 @@ class InstagramServiceProvider extends ServiceProvider
     protected function registerFactory(Application $app)
     {
         $app->singleton('instagram.factory', function () {
-            return new \Vinkla\Instagram\InstagramFactory();
+            return new InstagramFactory();
         });
 
-        $app->alias('instagram.factory', 'Vinkla\Instagram\InstagramFactory');
+        $app->alias('instagram.factory', InstagramFactory::class);
     }
 
     /**
@@ -90,7 +90,7 @@ class InstagramServiceProvider extends ServiceProvider
             return new InstagramManager($config, $factory);
         });
 
-        $app->alias('instagram', 'Vinkla\Instagram\InstagramManager');
+        $app->alias('instagram', InstagramManager::class);
     }
 
     /**
