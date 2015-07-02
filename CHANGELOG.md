@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.0.1 (released 2015-07-02)
+
+- Fix typo in factory class
+
 ## 3.0.0 (released 2015-07-01)
 
 - Official Lumen support
