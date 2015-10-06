@@ -43,7 +43,7 @@ class InstagramServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/instagram.php');
 
-        if (class_exists('Illuminate\Foundation\Application', false)) {
+        if (class_exists('Illuminate\Foundation\Application', false) && $app->runningInConsole()) {
             $this->publishes([$source => config_path('instagram.php')]);
         } elseif (class_exists('Laravel\Lumen\Application', false)) {
             $app->configure('instagram');
