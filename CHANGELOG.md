@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 3.1.0 (upcoming)
+## 3.1.0 (released 2015-10-07)
 
 - Improved Lumen support
 
