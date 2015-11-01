@@ -11,6 +11,7 @@
 
 namespace Vinkla\Instagram;
 
+use InvalidArgumentException;
 use MetzWeb\Instagram\Instagram;
 
 /**
@@ -46,7 +47,7 @@ class InstagramFactory
     protected function getConfig(array $config)
     {
         if (!array_key_exists('client_id', $config)) {
-            throw new \InvalidArgumentException('The Instagram client requires configuration.');
+            throw new InvalidArgumentException('Missing configuration key [client_id].');
         }
 
         return array_only($config, ['client_id', 'client_secret', 'callback_url']);
