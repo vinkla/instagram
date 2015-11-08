@@ -1,7 +1,7 @@
 Laravel Instagram
 =================
 
-![laravel-instagram](https://cloud.githubusercontent.com/assets/499192/7440605/a59b051e-f0bf-11e4-823a-b7e841c5edaf.png)
+![instagram](https://cloud.githubusercontent.com/assets/499192/11020990/f0f31dea-8632-11e5-95b1-77e72c7ba271.png)
 
 Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [Vincent Klaiber](https://github.com/vinkla).
 
