@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.2.0 (upcoming)
+
+- Laravel 5.2 support
+
 ## 3.1.0 (released 2015-10-07)
 
 - Improved Lumen support
