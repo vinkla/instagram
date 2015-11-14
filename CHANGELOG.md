@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 3.2.0 (upcoming)
+## 3.2.0 (released 2015-11-14)
 
 - Laravel 5.2 support
 - Update dependencies
