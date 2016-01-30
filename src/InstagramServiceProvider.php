@@ -11,7 +11,7 @@
 
 namespace Vinkla\Instagram;
 
-use Illuminate\Contracts\Container\Container as Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
@@ -59,62 +59,56 @@ class InstagramServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerFactory($this->app);
-        $this->registerManager($this->app);
-        $this->registerBindings($this->app);
+        $this->registerFactory();
+        $this->registerManager();
+        $this->registerBindings();
     }
 
     /**
      * Register the factory class.
      *
-     * @param \Illuminate\Contracts\Container\Container $app
-     *
      * @return void
      */
-    protected function registerFactory(Application $app)
+    protected function registerFactory()
     {
-        $app->singleton('instagram.factory', function () {
+        $this->app->singleton('instagram.factory', function () {
             return new InstagramFactory();
         });
 
-        $app->alias('instagram.factory', InstagramFactory::class);
+        $this->app->alias('instagram.factory', InstagramFactory::class);
     }
 
     /**
      * Register the manager class.
      *
-     * @param \Illuminate\Contracts\Container\Container $app
-     *
      * @return void
      */
-    protected function registerManager(Application $app)
+    protected function registerManager()
     {
-        $app->singleton('instagram', function ($app) {
+        $this->app->singleton('instagram', function (Container $app) {
             $config = $app['config'];
             $factory = $app['instagram.factory'];
 
             return new InstagramManager($config, $factory);
         });
 
-        $app->alias('instagram', InstagramManager::class);
+        $this->app->alias('instagram', InstagramManager::class);
     }
 
     /**
      * Register the bindings.
      *
-     * @param \Illuminate\Contracts\Container\Container $app
-     *
      * @return void
      */
-    protected function registerBindings(Application $app)
+    protected function registerBindings()
     {
-        $app->bind('instagram.connection', function ($app) {
+        $this->app->bind('instagram.connection', function (Container $app) {
             $manager = $app['instagram'];
 
             return $manager->connection();
         });
 
-        $app->alias('instagram.connection', Instagram::class);
+        $this->app->alias('instagram.connection', Instagram::class);
     }
 
     /**
