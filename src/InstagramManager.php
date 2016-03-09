@@ -24,7 +24,7 @@ class InstagramManager extends AbstractManager
     /**
      * The factory instance.
      *
-     * @var InstagramFactory
+     * @var \Vinkla\Instagram\InstagramFactory
      */
     private $factory;
 

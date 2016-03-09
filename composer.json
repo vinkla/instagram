@@ -14,7 +14,7 @@
         "illuminate/contracts": "5.1.* || 5.2.*",
         "illuminate/support": "5.1.* || 5.2.*",
         "graham-campbell/manager": "^2.3",
-        "cosenary/instagram": "^2.3"
+        "larabros/elogram": "^1.1"
     },
     "require-dev": {
         "graham-campbell/testbench": "^3.1",

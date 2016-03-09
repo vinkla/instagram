@@ -12,7 +12,7 @@
 namespace Vinkla\Instagram;
 
 use InvalidArgumentException;
-use MetzWeb\Instagram\Instagram;
+use Larabros\Elogram\Client;
 
 /**
  * This is the Instagram factory class.
@@ -26,7 +26,7 @@ class InstagramFactory
      *
      * @param array $config
      *
-     * @return \MetzWeb\Instagram\Instagram
+     * @return \Larabros\Elogram\Client
      */
     public function make(array $config)
     {
@@ -46,30 +46,32 @@ class InstagramFactory
      */
     protected function getConfig(array $config)
     {
-        if (!array_key_exists('client_id', $config)) {
-            throw new InvalidArgumentException('Missing configuration key [client_id].');
+        $keys = ['id', 'secret'];
+
+        foreach ($keys as $key) {
+            if (!array_key_exists($key, $config)) {
+                throw new InvalidArgumentException("Missing configuration key [$key].");
+            }
         }
 
-        return array_only($config, ['client_id', 'client_secret', 'callback_url']);
+        return array_only($config, ['id', 'secret', 'access_token', 'redirect_url', 'options']);
     }
 
     /**
-     * Get the pusher client.
+     * Get the Instagram client.
      *
      * @param string[] $auth
      *
-     * @return \Pusher
+     * @return \Larabros\Elogram\Client
      */
     protected function getClient(array $auth)
     {
-        if ($auth['client_secret'] && $auth['callback_url']) {
-            return new Instagram([
-                'apiKey' => $auth['client_id'],
-                'apiSecret' => $auth['client_secret'],
-                'apiCallback' => $auth['callback_url'],
-            ]);
-        }
-
-        return new Instagram($auth['client_id']);
+        return new Client(
+            array_get($auth, 'id'),
+            array_get($auth, 'secret'),
+            array_get($auth, 'access_token', null),
+            array_get($auth, 'redirect_url', ''),
+            array_get($auth, 'options', [])
+        );
     }
 }
