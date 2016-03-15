@@ -1,8 +1,6 @@
 Laravel Instagram
 =================
 
-> **Note:** On the 17 Nov 2015 [Instagram](http://developers.instagram.com/post/133424514006/instagram-platform-update) made [changes to their API ](https://instagram.com/developer/changelog/). Apps created before Nov 17, 2015 wont be affected until Jun 2016. Apps created on or after Nov 17 2015 will require to use their updated API. Please note that this library doesn't yet support their new updates.
-
 ![instagram](https://cloud.githubusercontent.com/assets/499192/11020990/f0f31dea-8632-11e5-95b1-77e72c7ba271.png)
 
 Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [Vincent Klaiber](https://github.com/vinkla).
