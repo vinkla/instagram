@@ -7,13 +7,13 @@ Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://ins
 
 ```php
 // Fetching data.
-$instagram->getUserFeed(30);
+$instagram->users()->get(30);
 
 // Get popular media.
-$instagram->getPopularMedia();
+$instagram->likes()->unlike(413);
 
 // Want to use the facade?
-Instagram::searchMedia(48.1454418, 11.5686003);
+Instagram::users()->getLikedMedia();
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
@@ -100,13 +100,13 @@ The Instagram manager will behave like it is a `Larabros\Elogram\Client`. If you
 use Vinkla\Instagram\Facades\Instagram;
 
 // Writing this…
-Instagram::connection('main')->getUserLikes();
+Instagram::connection('main')->users()->get(30);
 
 // …is identical to writing this
-Instagram::getUserLikes();
+Instagram::users()->get(30);
 
 // and is also identical to writing this.
-Instagram::connection()->getUserLikes();
+Instagram::connection()->users()->get(30);
 
 // This is because the main connection is configured to be the default.
 Instagram::getDefaultConnection(); // This will return main.
@@ -131,7 +131,7 @@ class Foo
 
 	public function bar()
 	{
-		$this->instagram->getPopularMedia();
+		$this->instagram->users()->get(30);
 	}
 }
 
