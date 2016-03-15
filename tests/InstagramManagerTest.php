@@ -56,7 +56,7 @@ class InstagramManagerTest extends AbstractTestBenchTestCase
         $config['name'] = 'instagram';
 
         $manager->getFactory()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock(Client::class));
+            ->with($config)->andReturn(new Client('id', 'secret'));
 
         return $manager;
     }
