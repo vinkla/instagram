@@ -12,7 +12,7 @@
 namespace Vinkla\Tests\Instagram;
 
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
-use MetzWeb\Instagram\Instagram;
+use Larabros\Elogram\Client;
 use Vinkla\Instagram\InstagramFactory;
 use Vinkla\Instagram\InstagramManager;
 
@@ -37,7 +37,7 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testBindings()
     {
-        $this->assertIsInjectable(Instagram::class);
+        $this->assertIsInjectable(Client::class);
 
         $original = $this->app['instagram.connection'];
         $this->app['instagram']->reconnect();

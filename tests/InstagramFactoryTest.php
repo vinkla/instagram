@@ -11,7 +11,7 @@
 
 namespace Vinkla\Tests\Instagram;
 
-use MetzWeb\Instagram\Instagram;
+use Larabros\Elogram\Client;
 use Vinkla\Instagram\InstagramFactory;
 
 /**
@@ -26,24 +26,34 @@ class InstagramFactoryTest extends AbstractTestCase
         $factory = $this->getInstagramFactory();
 
         $return = $factory->make([
-            'client_id' => 'your-client-id',
-            'client_secret' => null,
-            'callback_url' => null,
+            'id' => 'your-client-id',
+            'secret' => 'your-client-secret',
         ]);
 
-        $this->assertInstanceOf(Instagram::class, $return);
+        $this->assertInstanceOf(Client::class, $return);
     }
 
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testMakeWithoutClientId()
+    public function testMakeWithoutId()
     {
         $factory = $this->getInstagramFactory();
 
         $factory->make([
-            'client_secret' => null,
-            'callback_url' => null,
+            'secret' => 'your-client-secret',
+        ]);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testMakeWithoutSecret()
+    {
+        $factory = $this->getInstagramFactory();
+
+        $factory->make([
+            'id' => 'your-client-id',
         ]);
     }
 

@@ -14,8 +14,8 @@ namespace Vinkla\Instagram;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
+use Larabros\Elogram\Client;
 use Laravel\Lumen\Application as LumenApplication;
-use MetzWeb\Instagram\Instagram;
 
 /**
  * This is the Instagram service provider class.
@@ -108,7 +108,7 @@ class InstagramServiceProvider extends ServiceProvider
             return $manager->connection();
         });
 
-        $this->app->alias('instagram.connection', Instagram::class);
+        $this->app->alias('instagram.connection', Client::class);
     }
 
     /**

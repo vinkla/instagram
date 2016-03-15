@@ -1,21 +1,19 @@
 Laravel Instagram
 =================
 
-> **Note:** On the 17 Nov 2015 [Instagram](http://developers.instagram.com/post/133424514006/instagram-platform-update) made [changes to their API ](https://instagram.com/developer/changelog/). Apps created before Nov 17, 2015 wont be affected until Jun 2016. Apps created on or after Nov 17 2015 will require to use their updated API. Please note that this library doesn't yet support their new updates.
-
 ![instagram](https://cloud.githubusercontent.com/assets/499192/11020990/f0f31dea-8632-11e5-95b1-77e72c7ba271.png)
 
-Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel. [Instagram](http://instagram.com/developer) API package is made by [Christian Metz](https://github.com/cosenary/Instagram-PHP-API). The Laravel wrapper package is created and maintained by [Vincent Klaiber](https://github.com/vinkla).
+Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel and Lumen.
 
 ```php
-// Fetching data.
-$instagram->getUserFeed(30);
+// Fetch user data.
+$instagram->users()->get(30);
 
-// Get popular media.
-$instagram->getPopularMedia();
+// Get liked media.
+$instagram->users()->getLikedMedia();
 
 // Want to use the facade?
-Instagram::searchMedia(48.1454418, 11.5686003);
+Instagram::likes()->like(413);
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
@@ -65,7 +63,7 @@ This option `connections` is where each of the connections are setup for your ap
 
 #### InstagramManager
 
-This is the class of most interest. It is bound to the ioc container as `instagram` and can be accessed using the `Facades\Instagram` facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of [Graham Campbell's](https://github.com/GrahamCampbell) [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at that repository. Note that the connection class returned will always be an instance of `MetzWeb\Instagram\Instagram`.
+This is the class of most interest. It is bound to the ioc container as `instagram` and can be accessed using the `Facades\Instagram` facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of [Graham Campbell's](https://github.com/GrahamCampbell) [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package, so you may want to go and checkout the docs for how to use the manager class over at that repository. Note that the connection class returned will always be an instance of `Larabros\Elogram\Client`.
 
 #### Facades\Instagram
 
@@ -82,33 +80,26 @@ Here you can see an example of just how simple this package is to use. Out of th
 // You can alias this in config/app.php.
 use Vinkla\Instagram\Facades\Instagram;
 
-// Get code parameter.
-$code = Request::get('code');
-
-// Request the access token.
-$data = Instagram::getOAuthToken($code);
-
-// Set the access token with $data object.
-Instagram::setAccessToken($data);
-
+Instagram::users()->get(30);
 // We're done here - how easy was that, it just works!
-Instagram::getUserLikes();
+
+Instagram::likes()->get(101);
 // This example is simple, and there are far more methods available.
 ```
 
-The Instagram manager will behave like it is a `MetzWeb\Instagram\Instagram`. If you want to call specific connections, you can do that with the connection method:
+The Instagram manager will behave like it is a `Larabros\Elogram\Client`. If you want to call specific connections, you can do that with the connection method:
 
 ```php
 use Vinkla\Instagram\Facades\Instagram;
 
 // Writing this…
-Instagram::connection('main')->getUserLikes();
+Instagram::connection('main')->users()->get(30);
 
 // …is identical to writing this
-Instagram::getUserLikes();
+Instagram::users()->get(30);
 
 // and is also identical to writing this.
-Instagram::connection()->getUserLikes();
+Instagram::connection()->users()->get(30);
 
 // This is because the main connection is configured to be the default.
 Instagram::getDefaultConnection(); // This will return main.
@@ -133,7 +124,7 @@ class Foo
 
 	public function bar()
 	{
-		$this->instagram->getPopularMedia();
+		$this->instagram->users()->get(30);
 	}
 }
 
@@ -141,7 +132,7 @@ App::make('Foo')->bar();
 ```
 
 ## Documentation
-There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [Christian Metz's](https://github.com/cosenary) [Instagram API package](https://github.com/cosenary/Instagram-PHP-API).
+There are other classes in this package that are not documented here. This is because the package is a Laravel wrapper of [Larabros's](https://github.com/larabros) [Elogram package](https://github.com/larabros/elogram).
 
 ## License
 
