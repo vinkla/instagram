@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.0 (released 2016-03-14)
+
+- Switch to `larabros/elogram`
+
 ## 3.2.2 (released 2016-01-30)
 
 - Improved service provider
