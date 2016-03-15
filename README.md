@@ -6,14 +6,14 @@ Laravel Instagram
 Laravel [Instagram](http://instagram.com/developer) is an [Instagram](http://instagram.com/developer) bridge for Laravel and Lumen.
 
 ```php
-// Fetching data.
+// Fetch user data.
 $instagram->users()->get(30);
 
-// Get popular media.
-$instagram->likes()->unlike(413);
+// Get liked media.
+$instagram->users()->getLikedMedia();
 
 // Want to use the facade?
-Instagram::users()->getLikedMedia();
+Instagram::likes()->like(413);
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
