@@ -47,6 +47,7 @@ class ElogramProvider extends AbstractServiceProvider
 
         $container->share(SessionStore::class, function () use ($config) {
             $app = Application::getInstance();
+
             return new SessionStore($app->make('session.store'));
         });
     }
