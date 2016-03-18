@@ -15,6 +15,7 @@ use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 use Larabros\Elogram\Client;
 use Vinkla\Instagram\InstagramFactory;
 use Vinkla\Instagram\InstagramManager;
+use Vinkla\Instagram\Session\SessionStore;
 
 /**
  * This is the service provider test class.
@@ -33,6 +34,11 @@ class ServiceProviderTest extends AbstractTestCase
     public function testInstagramManagerIsInjectable()
     {
         $this->assertIsInjectable(InstagramManager::class);
+    }
+
+    public function testSessionStoreIsInjectable()
+    {
+        $this->assertIsInjectable(SessionStore::class);
     }
 
     public function testBindings()

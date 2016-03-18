@@ -12,6 +12,7 @@
     "require": {
         "php": "^5.5.9 || ^7.0",
         "illuminate/contracts": "5.1.* || 5.2.*",
+        "illuminate/session": "5.1.* || 5.2.*",
         "illuminate/support": "5.1.* || 5.2.*",
         "graham-campbell/manager": "^2.3",
         "larabros/elogram": "^1.1"
@@ -33,7 +34,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0-dev"
+            "dev-master": "4.1-dev"
         }
     },
     "minimum-stability": "dev",
