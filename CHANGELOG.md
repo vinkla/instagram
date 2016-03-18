@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.1 (released 2016-03-18)
+
+- Add custom session storage
+
 ## 4.0.0 (released 2016-03-14)
 
 - Switch to `larabros/elogram`
