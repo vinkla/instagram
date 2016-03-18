@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Vinkla\Instagram\Sessions;
+namespace Vinkla\Instagram\Session;
 
 use Illuminate\Session\Store;
 use Larabros\Elogram\Http\Sessions\DataStoreInterface;
