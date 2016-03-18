@@ -75,7 +75,9 @@ class InstagramFactory
             array_get($auth, 'redirect_url', ''),
             array_get($auth, 'options', [
                 'session_store' => SessionStore::class,
-                'providers'     => ElogramProvider::class,
+                'providers' => [
+                    ElogramProvider::class,
+                ],
             ])
         );
     }
