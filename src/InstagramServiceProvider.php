@@ -16,6 +16,7 @@ use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Larabros\Elogram\Client;
 use Laravel\Lumen\Application as LumenApplication;
+use Vinkla\Instagram\Session\SessionStoreHandler;
 
 /**
  * This is the Instagram service provider class.
@@ -59,9 +60,26 @@ class InstagramServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerSessionHandler();
         $this->registerFactory();
         $this->registerManager();
         $this->registerBindings();
+    }
+
+    /**
+     * Register the session handler class.
+     *
+     * @return void
+     */
+    protected function registerSessionHandler()
+    {
+        $this->app->singleton('instagram.session', function (Container $app) {
+            $session = $app['session.store'];
+
+            return new SessionStoreHandler($session);
+        });
+
+        $this->app->alias('instagram.session', SessionStoreHandler::class);
     }
 
     /**
@@ -122,6 +140,7 @@ class InstagramServiceProvider extends ServiceProvider
             'instagram',
             'instagram.factory',
             'instagram.connection',
+            'instagram.session',
         ];
     }
 }

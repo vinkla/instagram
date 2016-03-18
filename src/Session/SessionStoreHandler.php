@@ -15,21 +15,21 @@ use Illuminate\Session\Store;
 use Larabros\Elogram\Http\Sessions\DataStoreInterface;
 
 /**
- * This is the session store handler class.
+ * This is the session store class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
 class SessionStoreHandler implements DataStoreInterface
 {
     /**
-     * The session manager instance.
+     * The session instance.
      *
-     * @var \Illuminate\Session\SessionManager
+     * @var \Illuminate\Session\Store
      */
     protected $session;
 
     /**
-     * Create a new session manager instance.
+     * Create a new session store instance.
      *
      * @param \Illuminate\Session\Store $session
      */
