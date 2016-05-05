@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.0 (released 2016-05-05)
+
+- Added laravel 5.3 support
+
 ## 4.0.1 (released 2016-03-18)
 
 - Add custom session storage
