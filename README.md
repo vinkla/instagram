@@ -17,6 +17,7 @@ Instagram::likes()->like(413);
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
+[![StyleCI](https://styleci.io/repos/27216826/shield?style=flat)](https://styleci.io/repos/27216826)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/vinkla/instagram.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/instagram/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/vinkla/instagram.svg?style=flat)](https://scrutinizer-ci.com/g/vinkla/instagram)
 [![Latest Version](https://img.shields.io/github/release/vinkla/instagram.svg?style=flat)](https://github.com/vinkla/instagram/releases)
