@@ -13,6 +13,7 @@ namespace Vinkla\Instagram;
 
 use InvalidArgumentException;
 use Larabros\Elogram\Client;
+use Vinkla\Instagram\Session\ElogramProvider;
 use Vinkla\Instagram\Session\SessionStore;
 
 /**
@@ -74,6 +75,9 @@ class InstagramFactory
             array_get($auth, 'redirect_url', ''),
             array_get($auth, 'options', [
                 'session_store' => SessionStore::class,
+                'providers' => [
+                    ElogramProvider::class,
+                ],
             ])
         );
     }
