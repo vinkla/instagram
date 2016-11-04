@@ -14,9 +14,9 @@ $instagram = new Instagram('jerryseinfeld');
 $instagram->get();
 ```
 
-[![Build Status](https://img.shields.io/travis/vinkla/laravel-instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/laravel-instagram)
+[![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
 [![StyleCI](https://styleci.io/repos/27216826/shield?style=flat)](https://styleci.io/repos/27216826)
-[![Codecov](https://img.shields.io/codecov/c/github/vinkla/laravel-instagram.svg)](https://codecov.io/gh/vinkla/laravel-instagram)
+[![Codecov](https://img.shields.io/codecov/c/github/vinkla/instagram.svg)](https://codecov.io/gh/vinkla/instagram)
 [![Latest Version](https://img.shields.io/github/release/vinkla/instagram.svg?style=flat)](https://github.com/vinkla/instagram/releases)
 [![License](https://img.shields.io/packagist/l/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
 
