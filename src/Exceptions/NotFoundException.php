@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel Instagram.
+ * This file is part of Instagram.
  *
  * (c) Vincent Klaiber <hello@vinkla.com>
  *
@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Vinkla\Tests\Instagram;
+namespace Vinkla\Instagram\Exceptions;
 
-use PHPUnit\Framework\TestCase;
+use Exception;
 
 /**
- * This is the abstract test class.
+ * This is the not found exception class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-abstract class AbstractTestCase extends TestCase
+class NotFoundException extends Exception implements InstagramExceptionInterface
 {
+    //
 }

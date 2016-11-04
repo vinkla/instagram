@@ -1,8 +1,8 @@
 {
     "name": "vinkla/instagram",
-    "description": "An Instagram bridge for Laravel",
+    "description": "A simple Instagram package",
     "license": "MIT",
-    "keywords": ["laravel", "instagram", "images", "api", "image", "media", "facebook"],
+    "keywords": ["instagram", "media", "feed"],
     "authors": [
         {
             "name": "Vincent Klaiber",
@@ -11,17 +11,12 @@
         }
     ],
     "require": {
-        "php": "^5.6.4 || ^7.0",
-        "illuminate/contracts": "5.1.* || 5.2.* || 5.3.*",
-        "illuminate/session": "5.1.* || 5.2.* || 5.3.*",
-        "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
-        "graham-campbell/manager": "^2.4",
-        "larabros/elogram": "^1.1"
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "symfony/http-kernel": "^3.1"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^3.2",
-        "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "^5.4"
+        "phpunit/phpunit": "^5.6"
     },
     "autoload": {
         "psr-4": {
@@ -35,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.2-dev"
+            "dev-master": "5.0-dev"
         }
     },
     "minimum-stability": "dev",
