@@ -11,8 +11,8 @@
 
 namespace Vinkla\Tests\Instagram;
 
-use Vinkla\Instagram\Instagram;
 use PHPUnit\Framework\TestCase;
+use Vinkla\Instagram\Instagram;
 
 /**
  * This is the instagram test class.
