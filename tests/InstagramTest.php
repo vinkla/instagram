@@ -12,13 +12,14 @@
 namespace Vinkla\Tests\Instagram;
 
 use Vinkla\Instagram\Instagram;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the instagram test class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-class InstagramTest extends AbstractTestCase
+class InstagramTest extends TestCase
 {
     public function testGet()
     {
