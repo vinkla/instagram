@@ -30,7 +30,7 @@ $ composer require vinkla/instagram
 
 ## Usage
 
-First you need to create a new [`Vinkla\Instagram\Instagram`](src/Instagram.php) instance.
+First you need to create a new [`Instagram`](src/Instagram.php) instance.
 
 ```php
 use Vinkla\Instagram\Instagram;
