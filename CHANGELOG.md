@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 5.0.0 (released 2016-11-04)
+
+- Drop PHP 5.6 support
+- Simplify the package
+
 ## 4.2.0 (released 2016-07-11)
 
 - Dropped php 5.5 support
