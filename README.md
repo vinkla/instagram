@@ -30,7 +30,7 @@ $ composer require vinkla/instagram
 
 ## Usage
 
-First you need to create a new [`Instagram`](src/Instagram.php) instance.
+First you need to create a new `Vinkla\Instagram\Instagram` instance.
 
 ```php
 use Vinkla\Instagram\Instagram;
@@ -46,4 +46,4 @@ $instagram->get();
 
 ## License
 
- [MIT](LICENSE) © [Vincent Klaiber](https://vinkla.com)
+[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.com)
