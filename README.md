@@ -44,6 +44,8 @@ Then to fetch the data you can use the `get()` method.
 $instagram->get();
 ```
 
+To [preview the JSON data](https://www.instagram.com/jerryseinfeld/media) you can [visit the page](https://www.instagram.com/jerryseinfeld/media) in your browser.
+
 ## License
 
 [MIT](LICENSE) © [Vincent Klaiber](https://vinkla.com)
