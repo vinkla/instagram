@@ -25,10 +25,10 @@ class InstagramTest extends TestCase
 {
     public function testGet()
     {
-        $response = (new Instagram('jerryseinfeld'))->get();
+        $items = (new Instagram())->get('jerryseinfeld');
 
-        $this->assertObjectHasAttribute('status', $response);
-        $this->assertSame('ok', $response->status);
+        $this->assertTrue(is_array($items));
+        $this->assertCount(20, $items);
     }
 
     /**
@@ -36,6 +36,6 @@ class InstagramTest extends TestCase
      */
     public function testNotFound()
     {
-        (new Instagram('imspeechlessihavenospeech'))->get();
+        (new Instagram())->get('imspeechlessihavenospeech');
     }
 }

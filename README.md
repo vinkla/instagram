@@ -8,10 +8,10 @@
 use Vinkla\Instagram\Instagram;
 
 // Create a new instagram instance.
-$instagram = new Instagram('jerryseinfeld');
+$instagram = new Instagram();
 
 // Fetch the media feed.
-$instagram->get();
+$instagram->get('jerryseinfeld');
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
@@ -35,13 +35,13 @@ First you need to create a new `Vinkla\Instagram\Instagram` instance.
 ```php
 use Vinkla\Instagram\Instagram;
 
-$instagram = new Instagram('jerryseinfeld');
+$instagram = new Instagram();
 ```
 
 Then to fetch the data you can use the `get()` method.
 
 ```php
-$instagram->get();
+$instagram->get('jerryseinfeld');
 ```
 
 To [preview the JSON data](https://www.instagram.com/jerryseinfeld/media) you can [visit the page](https://www.instagram.com/jerryseinfeld/media) in your browser.

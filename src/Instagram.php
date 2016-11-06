@@ -26,13 +26,6 @@ use Vinkla\Instagram\Exceptions\NotFoundException;
 class Instagram
 {
     /**
-     * The username string.
-     *
-     * @var string
-     */
-    protected $user;
-
-    /**
      * The guzzle http client.
      *
      * @var \GuzzleHttp\ClientInterface
@@ -42,34 +35,34 @@ class Instagram
     /**
      * Create a new instagram instance.
      *
-     * @param string $user
      * @param \GuzzleHttp\ClientInterface $client
      *
      * @return void
      */
-    public function __construct(string $user, ClientInterface $client = null)
+    public function __construct(ClientInterface $client = null)
     {
-        $this->user = $user;
         $this->client = $client ?: new Client();
     }
 
     /**
-     * Fetch the instagram media feed.
+     * Fetch the media items.
+     *
+     * @param string $user
      *
      * @throws \Vinkla\Instagram\Exceptions\NotFoundException
      *
-     * @return object
+     * @return array
      */
-    public function get()
+    public function get(string $user): array
     {
         try {
-            $url = sprintf('https://www.instagram.com/%s/media', $this->user);
+            $url = sprintf('https://www.instagram.com/%s/media', $user);
 
             $response = $this->client->get($url);
 
-            return json_decode((string) $response->getBody());
+            return json_decode((string) $response->getBody(), true)['items'];
         } catch (RequestException $e) {
-            throw new NotFoundException(sprintf('The user [%s] was not found.', $this->user));
+            throw new NotFoundException(sprintf('The user [%s] was not found.', $user));
         }
     }
 }
