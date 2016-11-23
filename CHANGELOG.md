@@ -2,7 +2,7 @@
 
 ## 6.0.0 (released 2016-11-23)
 
-- Move the exception
+- Move the exception class
 
 ## 5.0.0 (released 2016-11-04)
 
