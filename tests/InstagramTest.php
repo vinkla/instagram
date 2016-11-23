@@ -32,7 +32,7 @@ class InstagramTest extends TestCase
     }
 
     /**
-     * @expectedException \Vinkla\Instagram\Exceptions\NotFoundException
+     * @expectedException \Vinkla\Instagram\InstagramException
      */
     public function testNotFound()
     {

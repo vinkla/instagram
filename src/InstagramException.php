@@ -11,14 +11,16 @@
 
 declare(strict_types=1);
 
-namespace Vinkla\Instagram\Exceptions;
+namespace Vinkla\Instagram;
+
+use RuntimeException;
 
 /**
- * This is the instagram exception interface.
+ * This is the instagram exception class.
  *
  * @author Vincent Klaiber <hello@vinkla.com>
  */
-interface InstagramExceptionInterface
+class InstagramException extends RuntimeException
 {
     //
 }

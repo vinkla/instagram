@@ -16,7 +16,6 @@ namespace Vinkla\Instagram;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
-use Vinkla\Instagram\Exceptions\NotFoundException;
 
 /**
  * This is the instagram class.
@@ -49,7 +48,7 @@ class Instagram
      *
      * @param string $user
      *
-     * @throws \Vinkla\Instagram\Exceptions\NotFoundException
+     * @throws \Vinkla\Instagram\InstagramException
      *
      * @return array
      */
@@ -62,7 +61,7 @@ class Instagram
 
             return json_decode((string) $response->getBody(), true)['items'];
         } catch (RequestException $e) {
-            throw new NotFoundException(sprintf('The user [%s] was not found.', $user));
+            throw new InstagramException(sprintf('The user [%s] was not found.', $user));
         }
     }
 }

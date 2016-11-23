@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.0.0 (released 2016-11-23)
+
+- Move the exception
+
 ## 5.0.0 (released 2016-11-04)
 
 - Drop PHP 5.6 support
