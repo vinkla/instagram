@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 7.0.0 (upcoming)
+
+- Add httplug support
+
 ## 6.0.0 (released 2016-11-23)
 
 - Move the exception class
