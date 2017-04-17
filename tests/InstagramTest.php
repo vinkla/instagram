@@ -27,6 +27,7 @@ class InstagramTest extends TestCase
     {
         $items = (new Instagram())->get('jerryseinfeld');
 
+        $this->assertTrue(is_array($items));
         $this->assertCount(20, $items);
     }
 

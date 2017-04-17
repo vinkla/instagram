@@ -61,9 +61,9 @@ class Instagram
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
-     * @return stdClass
+     * @return array
      */
-    public function get(string $user)
+    public function get(string $user): array
     {
         $uri = sprintf('https://www.instagram.com/%s/media/', $user);
 
