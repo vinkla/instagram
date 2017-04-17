@@ -74,6 +74,6 @@ class Instagram
             throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $user));
         }
 
-        return json_decode($response->getBody()->__toString())->items;
+        return json_decode((string) $response->getBody())->items;
     }
 }
