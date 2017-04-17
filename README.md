@@ -40,7 +40,7 @@ use Vinkla\Instagram\Instagram;
 $instagram = new Instagram();
 ```
 
-Then to fetch the data you can use the `get()` method.
+To fetch the Instagram media data you may use the `get()` method.
 
 ```php
 $instagram->get('jerryseinfeld');
