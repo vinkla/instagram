@@ -12,10 +12,15 @@
     ],
     "require": {
         "php": "^7.0",
-        "guzzlehttp/guzzle": "^6.2.1"
+        "php-http/client-implementation": "^1.0",
+        "php-http/httplug": "^1.1",
+        "php-http/discovery": "^1.2",
+        "php-http/message-factory": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.5"
     },
     "autoload": {
         "psr-4": {

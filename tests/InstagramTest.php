@@ -25,9 +25,11 @@ class InstagramTest extends TestCase
 {
     public function testGet()
     {
-        $items = (new Instagram())->get('jerryseinfeld');
+        $instagram = new Instagram();
 
-        $this->assertTrue(is_array($items));
+        $items = $instagram->get('jerryseinfeld');
+
+        $this->assertInternalType('array', $items);
         $this->assertCount(20, $items);
     }
 

@@ -13,9 +13,10 @@ declare(strict_types=1);
 
 namespace Vinkla\Instagram;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
+use Http\Client\HttpClient;
+use Http\Discovery\HttpClientDiscovery;
+use Http\Discovery\MessageFactoryDiscovery;
+use Http\Message\RequestFactory;
 
 /**
  * This is the instagram class.
@@ -25,22 +26,31 @@ use GuzzleHttp\Exception\RequestException;
 class Instagram
 {
     /**
-     * The guzzle http client.
+     * The http client.
      *
-     * @var \GuzzleHttp\ClientInterface
+     * @var \Http\Client\HttpClient
      */
-    protected $client;
+    protected $httpClient;
+
+    /**
+     * The http request factory.
+     *
+     * @var \Http\Message\RequestFactory
+     */
+    protected $requestFactory;
 
     /**
      * Create a new instagram instance.
      *
-     * @param \GuzzleHttp\ClientInterface $client
+     * @param \Http\Client\HttpClient $httpClient
+     * @param \Http\Message\RequestFactory $requestFactory
      *
      * @return void
      */
-    public function __construct(ClientInterface $client = null)
+    public function __construct(HttpClient $httpClient = null, RequestFactory $requestFactory = null)
     {
-        $this->client = $client ?: new Client();
+        $this->httpClient = $httpClient ?: HttpClientDiscovery::find();
+        $this->requestFactory = $requestFactory ?: MessageFactoryDiscovery::find();
     }
 
     /**
@@ -54,14 +64,16 @@ class Instagram
      */
     public function get(string $user): array
     {
-        try {
-            $url = sprintf('https://www.instagram.com/%s/media', $user);
+        $uri = sprintf('https://www.instagram.com/%s/media/', $user);
 
-            $response = $this->client->get($url);
+        $request = $this->requestFactory->createRequest('GET', $uri);
 
-            return json_decode((string) $response->getBody(), true)['items'];
-        } catch (RequestException $e) {
-            throw new InstagramException(sprintf('The user [%s] was not found.', $user));
+        $response = $this->httpClient->sendRequest($request);
+
+        if ($response->getStatusCode() === 404) {
+            throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $user));
         }
+
+        return json_decode($response->getBody()->__toString(), true)['items'];
     }
 }
