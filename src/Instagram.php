@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Vinkla\Instagram;
 
-use stdClass;
 use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
@@ -43,8 +42,8 @@ class Instagram
     /**
      * Create a new instagram instance.
      *
-     * @param \Http\Client\HttpClient $httpClient
-     * @param \Http\Message\RequestFactory $requestFactory
+     * @param \Http\Client\HttpClient|null $httpClient
+     * @param \Http\Message\RequestFactory|null $requestFactory
      *
      * @return void
      */
