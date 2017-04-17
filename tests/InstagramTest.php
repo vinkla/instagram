@@ -29,6 +29,8 @@ class InstagramTest extends TestCase
 
         $items = $instagram->get('jerryseinfeld');
 
+        die(var_dump($items));
+
         $this->assertInternalType('array', $items);
         $this->assertCount(20, $items);
     }

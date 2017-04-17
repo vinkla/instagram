@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Vinkla\Instagram;
 
+use stdClass;
 use Http\Client\HttpClient;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
@@ -60,9 +61,9 @@ class Instagram
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
-     * @return array
+     * @return stdClass
      */
-    public function get(string $user): array
+    public function get(string $user)
     {
         $uri = sprintf('https://www.instagram.com/%s/media/', $user);
 
@@ -74,6 +75,6 @@ class Instagram
             throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $user));
         }
 
-        return json_decode($response->getBody()->__toString(), true)['items'];
+        return json_decode($response->getBody()->__toString())->items;
     }
 }
