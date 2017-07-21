@@ -46,6 +46,8 @@ To fetch the Instagram media data you may use the `get()` method.
 $instagram->get('jerryseinfeld');
 ```
 
+> **Note:** This will only work for public Instagram accounts.
+
 To [preview the JSON data](https://www.instagram.com/jerryseinfeld/media) you can [visit the page](https://www.instagram.com/jerryseinfeld/media) in your browser.
 
 ## License
