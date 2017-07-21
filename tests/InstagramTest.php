@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Laravel Instagram.
+ * This file is part of Instagram.
  *
  * (c) Vincent Klaiber <hello@vinkla.com>
  *
