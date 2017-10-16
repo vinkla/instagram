@@ -15,6 +15,7 @@ namespace Vinkla\Tests\Instagram;
 
 use PHPUnit\Framework\TestCase;
 use Vinkla\Instagram\Instagram;
+use Vinkla\Instagram\InstagramException;
 
 /**
  * This is the instagram test class.
@@ -31,11 +32,10 @@ class InstagramTest extends TestCase
         $this->assertCount(20, $items);
     }
 
-    /**
-     * @expectedException \Vinkla\Instagram\InstagramException
-     */
     public function testNotFound()
     {
+        $this->expectException(InstagramException::class);
+
         (new Instagram())->get('imspeechlessihavenospeech');
     }
 }
