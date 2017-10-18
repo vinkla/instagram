@@ -76,4 +76,28 @@ class Instagram
 
         return json_decode((string) $response->getBody())->items;
     }
+
+    /**
+     * Fetch the media items from hashtag.
+     *
+     * @param string $hashtag
+     *
+     * @throws \Vinkla\Instagram\InstagramException
+     *
+     * @return array
+     */
+    public function getHashtag(string $hashtag): array
+    {
+        $uri = sprintf('https://www.instagram.com/explore/tags/%s/?__a=1', $hashtag);
+
+        $request = $this->requestFactory->createRequest('GET', $uri);
+
+        $response = $this->httpClient->sendRequest($request);
+
+        if ($response->getStatusCode() === 404) {
+            throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $hashtag));
+        }
+
+        return json_decode((string) $response->getBody())->tag->media->nodes;
+    }
 }
