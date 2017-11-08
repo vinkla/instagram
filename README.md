@@ -8,10 +8,10 @@
 use Vinkla\Instagram\Instagram;
 
 // Create a new instagram instance.
-$instagram = new Instagram();
+$instagram = new Instagram('access_token');
 
-// Fetch the media feed.
-$instagram->get('jerryseinfeld');
+// Fetch the user's recent media feed.
+$instagram->get();
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
@@ -32,23 +32,21 @@ $ composer require vinkla/instagram php-http/message php-http/guzzle6-adapter
 
 ## Usage
 
-First you need to create a new `Vinkla\Instagram\Instagram` instance.
+First you need to create a new `Vinkla\Instagram\Instagram` instance and add your access token. If you don't want to create a Instagram API application you can use [Pixel Union's access token generator](http://instagram.pixelunion.net) for Instagram.
 
 ```php
 use Vinkla\Instagram\Instagram;
 
-$instagram = new Instagram();
+$instagram = new Instagram('access_token');
 ```
 
-To fetch the Instagram media data you may use the `get()` method.
+To fetch the user's recent media data you may use the `get()` method.
 
 ```php
-$instagram->get('jerryseinfeld');
+$instagram->get();
 ```
 
-> **Note:** This will only work with public Instagram accounts.
-
-To [preview the JSON data](https://www.instagram.com/jerryseinfeld/media) you can [visit the page](https://www.instagram.com/jerryseinfeld/media) in your browser.
+> **Note:** You can only fetch recent media from the given user's access token.
 
 ## License
 

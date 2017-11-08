@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 8.0.0 (released 2017-11-08)
+
+- Add access token support
+- Remove public feeds support ([#59](https://github.com/vinkla/instagram/issues/59))
+
 ## 7.0.0 (released 2017-05-31)
 
 - Add httplug support
