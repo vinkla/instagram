@@ -32,7 +32,7 @@ $ composer require vinkla/instagram php-http/message php-http/guzzle6-adapter
 
 ## Usage
 
-First you need to create a new `Vinkla\Instagram\Instagram` instance and add your access token. If you don't want to create a Instagram API application you can use [Pixel Union's access token generator](http://instagram.pixelunion.net) for Instagram.
+First you need to create a new `Vinkla\Instagram\Instagram` instance and add your access token. If you don't want to create a custom Instagram API application you can use [Pixel Union's access token generator](http://instagram.pixelunion.net) for Instagram.
 
 ```php
 use Vinkla\Instagram\Instagram;
