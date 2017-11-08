@@ -56,15 +56,15 @@ class Instagram
     /**
      * Fetch the media items.
      *
-     * @param string $user
+     * @param string $access_token
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
      * @return array
      */
-    public function get(string $user): array
-    {
-        $uri = sprintf('https://www.instagram.com/%s/media/', $user);
+    public function get(string $access_token): array
+    {        
+        $uri = sprintf('https://api.instagram.com/v1/users/self/media/recent/?access_token=%s', $access_token);        
 
         $request = $this->requestFactory->createRequest('GET', $uri);
 
@@ -74,6 +74,6 @@ class Instagram
             throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $user));
         }
 
-        return json_decode((string) $response->getBody())->items;
+        return json_decode((string) $response->getBody())->data;
     }
 }
