@@ -52,7 +52,7 @@ To fetch the user's recent media data you may use the `get()` method.
 $instagram->get();
 ```
 
-> **Note:** You can only fetch recent media from the given user's access token.
+> **Note:** You can only fetch a user's recent media from the given access token.
 
 ## License
 
