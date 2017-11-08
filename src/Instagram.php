@@ -62,15 +62,25 @@ class Instagram
      *
      * @return array
      */
+    /**
+     * Fetch the media items.
+     *
+     * @param string $access_token
+     *
+     * @throws \Vinkla\Instagram\InstagramException
+     *
+     * @return array
+     */
     public function get(string $access_token): array
-    {        
-        $uri = sprintf('https://api.instagram.com/v1/users/self/media/recent/?access_token=%s', $access_token);        
+    {
+        $uri = sprintf('https://api.instagram.com/v1/users/self/media/recent/?access_token=%s', $access_token);
 
         $request = $this->requestFactory->createRequest('GET', $uri);
 
         $response = $this->httpClient->sendRequest($request);
 
-        if ($response->getStatusCode() === 404) {
+        if ($response->getStatusCode() === 404)
+        {
             throw new InstagramException(sprintf('The user [%s] wasn\'t found.', $user));
         }
 
