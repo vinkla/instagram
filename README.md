@@ -32,12 +32,18 @@ $ composer require vinkla/instagram php-http/message php-http/guzzle6-adapter
 
 ## Usage
 
-First you need to create a new `Vinkla\Instagram\Instagram` instance and add your access token. If you don't want to create a custom Instagram API application you can use [Pixel Union's access token generator](http://instagram.pixelunion.net) for Instagram.
+First you need to generate an access token using Pixel Union's [access token generator](http://instagram.pixelunion.net) or by creating an [Instagram application](https://www.instagram.com/developer/authentication).
+
+```
+5937104658.5688ed0.675p84e21a0341gcb3b44b1a13d9de91
+```
+
+Then create a new `Vinkla\Instagram\Instagram` instance with your Instagram access token.
 
 ```php
 use Vinkla\Instagram\Instagram;
 
-$instagram = new Instagram('access_token');
+$instagram = new Instagram('5937104658.5688ed0.675p84e21a0341gcb3b44b1a13d9de91');
 ```
 
 To fetch the user's recent media data you may use the `get()` method.
