@@ -8,7 +8,7 @@
 use Vinkla\Instagram\Instagram;
 
 // Create a new instagram instance.
-$instagram = new Instagram('access_token');
+$instagram = new Instagram('your-access-token');
 
 // Fetch the user's recent media feed.
 $instagram->get();
