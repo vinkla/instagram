@@ -20,8 +20,8 @@
     "require-dev": {
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.6",
-        "php-http/mock-client": "^1.0",
-        "phpunit/phpunit": "^6.5"
+        "php-http/mock-client": "^1.1",
+        "phpunit/phpunit": "^7.0"
     },
     "autoload": {
         "psr-4": {
