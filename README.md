@@ -54,6 +54,7 @@ To fetch the user's recent media data you may use the `get()` method.
 
 ```php
 $instagram->get();
+```
 
 To get the user informationfetch data you may use the `me()` method.
 
