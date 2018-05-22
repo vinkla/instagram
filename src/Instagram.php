@@ -91,7 +91,7 @@ class Instagram
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
-     * @return array
+     * @return object
      */
     public function me(): \stdClass
     {
