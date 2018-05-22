@@ -85,4 +85,28 @@ class Instagram
 
         return json_decode((string) $response->getBody())->data;
     }
+
+    /**
+     * User information
+     *
+     * @throws \Vinkla\Instagram\InstagramException
+     *
+     * @return array
+     */
+    public function me(): array
+    {
+        $uri = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
+
+        $request = $this->requestFactory->createRequest('GET', $uri);
+
+        $response = $this->httpClient->sendRequest($request);
+
+        if ($response->getStatusCode() === 400) {
+            $body = json_decode((string) $response->getBody());
+
+            throw new InstagramException($body->meta->error_message);
+        }
+
+        return json_decode((string) $response->getBody())->data;
+    }
 }

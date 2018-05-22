@@ -12,6 +12,9 @@ $instagram = new Instagram('your-access-token');
 
 // Fetch the user's recent media feed.
 $instagram->get();
+
+// Get user information
+$instagram->me();
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
