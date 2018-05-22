@@ -93,7 +93,7 @@ class Instagram
      *
      * @return array
      */
-    public function me(): array
+    public function me(): \stdClass
     {
         $uri = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
 
