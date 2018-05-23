@@ -42,7 +42,7 @@ class InstagramTest extends TestCase
         $this->assertCount(20, $items);
     }
 
-    public function testMe()
+    public function testSelf()
     {
         $response = new Response(200, [], json_encode([
             'data' => [
@@ -54,7 +54,7 @@ class InstagramTest extends TestCase
         $client->addResponse($response);
 
         $instagram = new Instagram('jerryseinfeld', $client);
-        $user = $instagram->me();
+        $user = $instagram->self();
 
         $this->assertInternalType('object', $user);
     }
