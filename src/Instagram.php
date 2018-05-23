@@ -47,6 +47,13 @@ class Instagram
     protected $requestFactory;
 
     /**
+     * The http request.
+     *
+     * @var string
+     */
+    protected $request;
+
+    /**
      * Create a new instagram instance.
      *
      * @param string $accessToken
@@ -65,31 +72,19 @@ class Instagram
     /**
      * Fetch the media items.
      *
-     * @throws \Vinkla\Instagram\InstagramException
-     *
      * @return array
      */
     public function get(): array
     {
         $uri = sprintf('https://api.instagram.com/v1/users/self/media/recent?access_token=%s', $this->accessToken);
 
-        $request = $this->requestFactory->createRequest('GET', $uri);
+        $this->request = $this->requestFactory->createRequest('GET', $uri);
 
-        $response = $this->httpClient->sendRequest($request);
-
-        if ($response->getStatusCode() === 400) {
-            $body = json_decode((string) $response->getBody());
-
-            throw new InstagramException($body->meta->error_message);
-        }
-
-        return json_decode((string) $response->getBody())->data;
+        return $this->response();
     }
 
     /**
      * User information.
-     *
-     * @throws \Vinkla\Instagram\InstagramException
      *
      * @return object
      */
@@ -97,9 +92,21 @@ class Instagram
     {
         $uri = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
 
-        $request = $this->requestFactory->createRequest('GET', $uri);
+        $this->request = $this->requestFactory->createRequest('GET', $uri);
 
-        $response = $this->httpClient->sendRequest($request);
+        return $this->response();
+    }
+
+    /**
+     * Get http response.
+     *
+     * @throws \Vinkla\Instagram\InstagramException
+     *
+     * @return mix
+     */
+    public function response()
+    {
+        $response = $this->httpClient->sendRequest($this->request);
 
         if ($response->getStatusCode() === 400) {
             $body = json_decode((string) $response->getBody());
