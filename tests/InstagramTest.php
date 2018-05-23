@@ -46,7 +46,7 @@ class InstagramTest extends TestCase
     {
         $response = new Response(200, [], json_encode([
             'data' => [
-                'id' => rand(1, 100000)
+                'id' => rand(1, 100000),
             ],
         ]));
 

@@ -87,7 +87,7 @@ class Instagram
     }
 
     /**
-     * User information
+     * User information.
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
