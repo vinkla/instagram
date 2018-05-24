@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 9.0.0 (upcoming)
+
+- Added user information endpoint
+- Updated method name get to media
+- Removed PHP 7.1 support
+
 ## 8.0.0 (released 2017-11-08)
 
 - Add access token support

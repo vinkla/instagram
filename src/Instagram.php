@@ -70,43 +70,46 @@ class Instagram
     }
 
     /**
-     * Fetch the media items.
+     * Fetch recent user media items.
      *
      * @return array
      */
-    public function get(): array
+    public function media(): array
     {
-        $uri = sprintf('https://api.instagram.com/v1/users/self/media/recent?access_token=%s', $this->accessToken);
+        $url = sprintf('https://api.instagram.com/v1/users/self/media/recent?access_token=%s', $this->accessToken);
 
-        $this->request = $this->requestFactory->createRequest('GET', $uri);
+        $response = $this->get($url);
 
-        return $this->response();
+        return $response->data;
     }
 
     /**
-     * User information.
+     * Fetch user information.
      *
      * @return object
      */
-    public function self(): \stdClass
+    public function self(): object
     {
-        $uri = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
+        $url = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
 
-        $this->request = $this->requestFactory->createRequest('GET', $uri);
+        $response = $this->get($url);
 
-        return $this->response();
+        return $response->data;
     }
 
     /**
-     * Get http response.
+     * Send a get request.
+     *
+     * @param string $url
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
-     * @return mix
+     * @return object
      */
-    public function response()
+    protected function get(string $url): object
     {
-        $response = $this->httpClient->sendRequest($this->request);
+        $request = $this->requestFactory->createRequest('GET', $url);
+        $response = $this->httpClient->sendRequest($request);
 
         if ($response->getStatusCode() === 400) {
             $body = json_decode((string) $response->getBody());
@@ -114,6 +117,6 @@ class Instagram
             throw new InstagramException($body->meta->error_message);
         }
 
-        return json_decode((string) $response->getBody())->data;
+        return json_decode((string) $response->getBody());
     }
 }

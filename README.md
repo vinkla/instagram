@@ -10,10 +10,10 @@ use Vinkla\Instagram\Instagram;
 // Create a new instagram instance.
 $instagram = new Instagram('your-access-token');
 
-// Fetch the user's recent media feed.
-$instagram->get();
+// Fetch recent user media items.
+$instagram->media();
 
-// Get user information
+// Fetch user information.
 $instagram->self();
 ```
 
@@ -50,13 +50,13 @@ use Vinkla\Instagram\Instagram;
 $instagram = new Instagram('5937104658.5688ed0.675p84e21a0341gcb3b44b1a13d9de91');
 ```
 
-To fetch the user's recent media data you may use the `get()` method.
+To fetch the user's recent media items you may use the `media()` method.
 
 ```php
-$instagram->get();
+$instagram->media();
 ```
 
-To get the user information data you may use the `self()` method.
+To fetch the user information data you may use the `self()` method.
 
 ```php
 $instagram->self();

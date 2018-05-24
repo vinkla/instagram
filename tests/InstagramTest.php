@@ -26,7 +26,7 @@ use Vinkla\Instagram\InstagramException;
  */
 class InstagramTest extends TestCase
 {
-    public function testGet()
+    public function testMedia()
     {
         $response = new Response(200, [], json_encode([
             'data' => range(0, 19),
@@ -36,7 +36,7 @@ class InstagramTest extends TestCase
         $client->addResponse($response);
 
         $instagram = new Instagram('jerryseinfeld', $client);
-        $items = $instagram->get();
+        $items = $instagram->media();
 
         $this->assertInternalType('array', $items);
         $this->assertCount(20, $items);
@@ -64,6 +64,6 @@ class InstagramTest extends TestCase
         $this->expectException(InstagramException::class);
         $this->expectExceptionMessage('The access_token provided is invalid.');
 
-        (new Instagram('imspeechlessihavenospeech'))->get();
+        (new Instagram('imspeechlessihavenospeech'))->media();
     }
 }
