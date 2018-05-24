@@ -42,6 +42,23 @@ class InstagramTest extends TestCase
         $this->assertCount(20, $items);
     }
 
+    public function testSelf()
+    {
+        $response = new Response(200, [], json_encode([
+            'data' => [
+                'id' => rand(1, 100000),
+            ],
+        ]));
+
+        $client = new Client();
+        $client->addResponse($response);
+
+        $instagram = new Instagram('jerryseinfeld', $client);
+        $user = $instagram->self();
+
+        $this->assertInternalType('object', $user);
+    }
+
     public function testError()
     {
         $this->expectException(InstagramException::class);

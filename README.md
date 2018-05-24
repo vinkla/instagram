@@ -12,6 +12,9 @@ $instagram = new Instagram('your-access-token');
 
 // Fetch the user's recent media feed.
 $instagram->get();
+
+// Get user information
+$instagram->self();
 ```
 
 [![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
@@ -51,6 +54,12 @@ To fetch the user's recent media data you may use the `get()` method.
 
 ```php
 $instagram->get();
+```
+
+To get the user information data you may use the `self()` method.
+
+```php
+$instagram->self();
 ```
 
 > **Note:** You can only fetch a user's recent media from the given access token.
