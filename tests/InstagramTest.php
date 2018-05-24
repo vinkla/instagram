@@ -30,6 +30,7 @@ class InstagramTest extends TestCase
     {
         $response = new Response(200, [], json_encode([
             'data' => range(0, 19),
+            'meta' => [],
         ]));
 
         $client = new Client();
@@ -45,9 +46,8 @@ class InstagramTest extends TestCase
     public function testSelf()
     {
         $response = new Response(200, [], json_encode([
-            'data' => [
-                'id' => rand(1, 100000),
-            ],
+            'data' => ['id' => rand(1, 100000)],
+            'meta' => [],
         ]));
 
         $client = new Client();

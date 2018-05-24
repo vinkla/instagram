@@ -76,9 +76,7 @@ class Instagram
      */
     public function media(): array
     {
-        $url = sprintf('https://api.instagram.com/v1/users/self/media/recent?access_token=%s', $this->accessToken);
-
-        $response = $this->get($url);
+        $response = $this->get('users/self/media/recent');
 
         return $response->data;
     }
@@ -90,9 +88,7 @@ class Instagram
      */
     public function self(): object
     {
-        $url = sprintf('https://api.instagram.com/v1/users/self/?access_token=%s', $this->accessToken);
-
-        $response = $this->get($url);
+        $response = $this->get('users/self');
 
         return $response->data;
     }
@@ -100,23 +96,25 @@ class Instagram
     /**
      * Send a get request.
      *
-     * @param string $url
+     * @param string $path
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
      * @return object
      */
-    protected function get(string $url): object
+    protected function get(string $path): object
     {
+        $url = sprintf('https://api.instagram.com/v1/%s?access_token=%s', $path, $this->accessToken);
+
         $request = $this->requestFactory->createRequest('GET', $url);
         $response = $this->httpClient->sendRequest($request);
 
-        if ($response->getStatusCode() === 400) {
-            $body = json_decode((string) $response->getBody());
+        $body = json_decode((string) $response->getBody());
 
+        if (isset($body->meta->error_message)) {
             throw new InstagramException($body->meta->error_message);
         }
 
-        return json_decode((string) $response->getBody());
+        return $body;
     }
 }
