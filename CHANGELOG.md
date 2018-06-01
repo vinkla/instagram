@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 9.0.0 (upcoming)
+## 9.0.0 (released 2018-06-01)
 
 - Added user information endpoint
 - Updated method name get to media
