@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 9.0.1 (released 2018-06-12)
+
+- Fixed API rate limiting error
+
 ## 9.0.0 (released 2018-06-01)
 
 - Added user information endpoint

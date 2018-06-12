@@ -111,6 +111,10 @@ class Instagram
 
         $body = json_decode((string) $response->getBody());
 
+        if (isset($body->error_message)) {
+            throw new InstagramException($body->error_message);
+        }
+
         if (isset($body->meta->error_message)) {
             throw new InstagramException($body->meta->error_message);
         }
