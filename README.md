@@ -17,12 +17,11 @@ $instagram->media();
 $instagram->self();
 ```
 
-[![Build Status](https://img.shields.io/travis/vinkla/instagram/master.svg?style=flat)](https://travis-ci.org/vinkla/instagram)
-[![StyleCI](https://styleci.io/repos/27216826/shield?style=flat)](https://styleci.io/repos/27216826)
-[![Coverage Status](https://img.shields.io/codecov/c/github/vinkla/instagram.svg?style=flat)](https://codecov.io/github/vinkla/instagram)
-[![Total Downloads](https://img.shields.io/packagist/dt/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
-[![Latest Version](https://img.shields.io/github/release/vinkla/instagram.svg?style=flat)](https://github.com/vinkla/instagram/releases)
-[![License](https://img.shields.io/packagist/l/vinkla/instagram.svg?style=flat)](https://packagist.org/packages/vinkla/instagram)
+[![Build Status](https://badgen.net/travis/vinkla/instagram/master)](https://travis-ci.org/vinkla/instagram)
+[![Coverage Status](https://badgen.net/codecov/c/github/vinkla/instagram)](https://codecov.io/github/vinkla/instagram)
+[![Total Downloads](https://badgen.net/packagist/dt/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram)
+[![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
+[![License](https://badgen.net/packagist/license/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram)
 
 ## Installation
 
