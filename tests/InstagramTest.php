@@ -72,11 +72,7 @@ class InstagramTest extends TestCase
         $this->expectException(InstagramException::class);
         $this->expectExceptionMessage('No server is available for the request');
 
-        $response = new Response(503,
-            [],
-            null,
-            null,
-            'No server is available for the request');
+        $response = new Response(503, [], null, null, 'No server is available for the request');
 
         $client = new Client();
         $client->addResponse($response);
