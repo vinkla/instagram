@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 9.0.2 (released 2018-10-03)
+
+- Fixed empty body error
+
 ## 9.0.1 (released 2018-06-12)
 
 - Fixed API rate limiting error
