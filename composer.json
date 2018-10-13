@@ -1,8 +1,13 @@
 {
     "name": "vinkla/instagram",
     "description": "An easy-to-use and simple Instagram package",
+    "keywords": [
+        "instagram",
+        "media",
+        "feed",
+        "recent"
+    ],
     "license": "MIT",
-    "keywords": ["instagram", "media", "feed", "recent"],
     "authors": [
         {
             "name": "Vincent Klaiber",
@@ -23,6 +28,11 @@
         "php-http/mock-client": "^1.1",
         "phpunit/phpunit": "^7.2"
     },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "9.1-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Vinkla\\Instagram\\": "src/"
@@ -31,11 +41,6 @@
     "autoload-dev": {
         "psr-4": {
             "Vinkla\\Tests\\Instagram\\": "tests/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "9.1-dev"
         }
     },
     "minimum-stability": "dev",
