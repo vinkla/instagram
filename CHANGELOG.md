@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 9.1.0 (released 2018-10-31)
+
+- Added php-http/httplug 2.0 support
+
 ## 9.0.2 (released 2018-10-03)
 
 - Fixed empty body error
