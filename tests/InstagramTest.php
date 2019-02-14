@@ -59,6 +59,31 @@ class InstagramTest extends TestCase
         $this->assertInternalType('object', $user);
     }
 
+    public function testCanAppendParametersToMedia()
+    {
+        $response = new Response(200, [], json_encode([
+            'data' => [],
+            'meta' => [],
+        ]));
+
+        $client = new Client();
+        $client->addResponse($response);
+
+        $instagram = new Instagram('jerryseinfeld', $client);
+        $instagram->media([
+            'count' => 22,
+            'min_id' => 'expected minimum id',
+            'max_id' => 'expected maximum id',
+        ]);
+
+        $request = $client->getLastRequest();
+
+        $this->assertSame(
+            'access_token=jerryseinfeld&count=22&min_id=expected+minimum+id&max_id=expected+maximum+id',
+            $request->getUri()->getQuery()
+        );
+    }
+
     public function testError()
     {
         $this->expectException(InstagramException::class);
