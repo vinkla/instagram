@@ -55,7 +55,7 @@ To fetch the user's recent media items you may use the `media()` method.
 $instagram->media();
 ```
 
-You can pass [additional query parameters](https://www.instagram.com/developer/endpoints/users/#get_users_media_recent_self) to the `media()` method if needed.
+You may pass [additional query parameters](https://www.instagram.com/developer/endpoints/users/#get_users_media_recent_self) to the `media()` method if needed.
 
 ```php
 $instagram->media(['count' => 5]);
