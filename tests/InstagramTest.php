@@ -39,7 +39,7 @@ class InstagramTest extends TestCase
         $instagram = new Instagram('jerryseinfeld', $client);
         $items = $instagram->media();
 
-        $this->assertInternalType('array', $items);
+        $this->assertIsArray($items);
         $this->assertCount(20, $items);
     }
 
@@ -56,7 +56,7 @@ class InstagramTest extends TestCase
         $instagram = new Instagram('jerryseinfeld', $client);
         $user = $instagram->self();
 
-        $this->assertInternalType('object', $user);
+        $this->assertIsObject($user);
     }
 
     public function testCanAppendParametersToMedia()

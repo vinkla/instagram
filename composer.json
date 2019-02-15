@@ -26,7 +26,7 @@
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.7",
         "php-http/mock-client": "^1.1",
-        "phpunit/phpunit": "^7.4"
+        "phpunit/phpunit": "^8.0"
     },
     "extra": {
         "branch-alias": {
