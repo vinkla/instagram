@@ -107,9 +107,7 @@ class Instagram
      */
     protected function get(string $path, array $parameters = []): object
     {
-        $parameters = $this->prepareParameters($parameters);
-
-        $url = sprintf('https://api.instagram.com/v1/%s?%s', $path, http_build_query($parameters));
+        $url = $this->buildApiUrl($path, $parameters);
 
         $request = $this->requestFactory->createRequest('GET', $url);
         $response = $this->httpClient->sendRequest($request);
@@ -134,14 +132,19 @@ class Instagram
     /**
      * Add access token and escape parameters.
      *
+     * @param string $path
      * @param array $parameters
      *
-     * @return array
+     * @return string
      */
-    protected function prepareParameters(array $parameters)
+    protected function buildApiUrl(string $path, array $parameters): string
     {
-        return array_merge([
+        $parameters = array_merge([
             'access_token' => $this->accessToken,
         ], $parameters);
+
+        $query = http_build_query($parameters, '', '&');
+
+        return 'https://api.instagram.com/v1/'.$path.'?'.$query;
     }
 }

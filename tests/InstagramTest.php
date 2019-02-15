@@ -72,14 +72,14 @@ class InstagramTest extends TestCase
         $instagram = new Instagram('jerryseinfeld', $client);
         $instagram->media([
             'count' => 22,
-            'min_id' => 'expected minimum id',
-            'max_id' => 'expected maximum id',
+            'min_id' => 'min id',
+            'max_id' => 'max id',
         ]);
 
         $request = $client->getLastRequest();
 
         $this->assertSame(
-            'access_token=jerryseinfeld&count=22&min_id=expected+minimum+id&max_id=expected+maximum+id',
+            'access_token=jerryseinfeld&count=22&min_id=min+id&max_id=max+id',
             $request->getUri()->getQuery()
         );
     }
