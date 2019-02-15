@@ -72,11 +72,13 @@ class Instagram
     /**
      * Fetch recent user media items.
      *
+     * @param array $parameters
+     *
      * @return array
      */
-    public function media(): array
+    public function media(array $parameters = []): array
     {
-        $response = $this->get('users/self/media/recent');
+        $response = $this->get('users/self/media/recent', $parameters);
 
         return $response->data;
     }
@@ -97,14 +99,17 @@ class Instagram
      * Send a get request.
      *
      * @param string $path
+     * @param array $parameters
      *
      * @throws \Vinkla\Instagram\InstagramException
      *
      * @return object
      */
-    protected function get(string $path): object
+    protected function get(string $path, array $parameters = []): object
     {
-        $url = sprintf('https://api.instagram.com/v1/%s?access_token=%s', $path, $this->accessToken);
+        $parameters = $this->prepareParameters($parameters);
+
+        $url = sprintf('https://api.instagram.com/v1/%s?%s', $path, http_build_query($parameters));
 
         $request = $this->requestFactory->createRequest('GET', $url);
         $response = $this->httpClient->sendRequest($request);
@@ -124,5 +129,19 @@ class Instagram
         }
 
         return $body;
+    }
+
+    /**
+     * Add access token and escape parameters.
+     *
+     * @param array $parameters
+     *
+     * @return array
+     */
+    protected function prepareParameters(array $parameters)
+    {
+        return array_merge([
+            'access_token' => $this->accessToken,
+        ], $parameters);
     }
 }
