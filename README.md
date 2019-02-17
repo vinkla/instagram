@@ -73,7 +73,7 @@ $instagram->self();
 
 The Instagram allows you to call their API 200 times per hour. Try to cache the responses in your application.
 
-> _The Instagram API uses the same rate limiting as the Graph API (200 calls per user per hour) with one exception: the /media/comments edge limits writes to 60 writes per user per hour. Please refer to the Graph API's rate limiting documentation for more information_ - [Facebook](https://developers.facebook.com/docs/instagram-api/overview/#rate-limiting)
+> _The Instagram API uses the same rate limiting as the Graph API (200 calls per user per hour) with one exception: the /media/comments edge limits writes to 60 writes per user per hour. Please refer to the Graph API's rate limiting documentation for more information - [Facebook](https://developers.facebook.com/docs/instagram-api/overview/#rate-limiting)_
 
 ## License
 
