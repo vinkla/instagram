@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "9.2-dev"
+            "dev-develop": "9.3-dev"
         }
     },
     "autoload": {
