@@ -33,10 +33,6 @@ Read more about the benefits of this and about what different HTTP clients you m
 $ composer require vinkla/instagram php-http/message php-http/guzzle6-adapter
 ```
 
-## Disclaimer
-
-Instagram will [deprecate their API](https://www.instagram.com/developer/) in favor of the new [Instagram Graph API](https://developers.facebook.com/products/instagram/) in early 2020. There are currently no plans to add Graph API support to this package. If you want to keep this package alive and add support for the new API, please submit a pull request.
-
 ## Usage
 
 First you need to generate an access token using Pixel Union's [access token generator](http://instagram.pixelunion.net) or by creating an [Instagram application](https://www.instagram.com/developer/authentication).
@@ -78,6 +74,10 @@ $instagram->self();
 The Instagram allows you to call their API 200 times per hour. Try to cache the responses in your application.
 
 > _The Instagram API uses the same rate limiting as the Graph API (200 calls per user per hour) with one exception: the /media/comments edge limits writes to 60 writes per user per hour. Please refer to the Graph API's rate limiting documentation for more information - [Facebook](https://developers.facebook.com/docs/instagram-api/overview/#rate-limiting)_
+
+## Disclaimer
+
+Instagram will [deprecate their API](https://www.instagram.com/developer/) in favor of the new [Instagram Graph API](https://developers.facebook.com/products/instagram/) in early 2020. There are currently no plans to add Graph API support to this package. If you want to keep this package alive and add support for the new API, please submit a pull request.
 
 ## License
 
