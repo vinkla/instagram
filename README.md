@@ -33,6 +33,10 @@ Read more about the benefits of this and about what different HTTP clients you m
 $ composer require vinkla/instagram php-http/message php-http/guzzle6-adapter
 ```
 
+## Disclaimer
+
+Instagram will [deprecate their API](https://www.instagram.com/developer/) in favor of the new [Instagram Graph API](https://developers.facebook.com/products/instagram/) in early 2020. There are currently no plans to add Graph API support to this package. If you want to keep this package alive and add support for the new API, please submit a pull request.
+
 ## Usage
 
 First you need to generate an access token using Pixel Union's [access token generator](http://instagram.pixelunion.net) or by creating an [Instagram application](https://www.instagram.com/developer/authentication).
