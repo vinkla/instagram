@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 9.3.0 (released 2019-04-11)
+
+- Added media comments method ([#102](https://github.com/vinkla/instagram/pull/102))
+
 ## 9.2.0 (released 2019-02-17)
 
 - Added query parameters to media method ([#101](https://github.com/vinkla/instagram/pull/101))
