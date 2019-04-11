@@ -43,22 +43,6 @@ class InstagramTest extends TestCase
         $this->assertCount(20, $items);
     }
 
-    public function testSelf()
-    {
-        $response = new Response(200, [], json_encode([
-            'data' => ['id' => rand(1, 100000)],
-            'meta' => [],
-        ]));
-
-        $client = new Client();
-        $client->addResponse($response);
-
-        $instagram = new Instagram('jerryseinfeld', $client);
-        $user = $instagram->self();
-
-        $this->assertIsObject($user);
-    }
-
     public function testCanAppendParametersToMedia()
     {
         $response = new Response(200, [], json_encode([
@@ -82,6 +66,38 @@ class InstagramTest extends TestCase
             'access_token=jerryseinfeld&count=22&min_id=min+id&max_id=max+id',
             $request->getUri()->getQuery()
         );
+    }
+
+    public function testSelf()
+    {
+        $response = new Response(200, [], json_encode([
+            'data' => ['id' => rand(1, 100000)],
+            'meta' => [],
+        ]));
+
+        $client = new Client();
+        $client->addResponse($response);
+
+        $instagram = new Instagram('jerryseinfeld', $client);
+        $user = $instagram->self();
+
+        $this->assertIsObject($user);
+    }
+
+    public function testComments()
+    {
+        $response = new Response(200, [], json_encode([
+            'data' => range(1, 5),
+            'meta' => [],
+        ]));
+
+        $client = new Client();
+        $client->addResponse($response);
+
+        $instagram = new Instagram('jerryseinfeld', $client);
+        $comments = $instagram->comments('media-id');
+
+        $this->assertIsArray($comments);
     }
 
     public function testError()

@@ -82,17 +82,17 @@ class Instagram
 
         return $response->data;
     }
-    
-     /**
+
+    /**
      * Fetch comments from media item.
      *
-     * @param string $mediaID
+     * @param string $mediaId
      *
      * @return array
      */
-    public function comments(string $mediaID) : array
+    public function comments(string $mediaId) : array
     {
-        $response = $this->get('media/'.$mediaID.'/comments');
+        $response = $this->get('media/'.$mediaId.'/comments');
 
         return $response->data;
     }
