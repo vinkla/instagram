@@ -67,6 +67,12 @@ To fetch the user information data you may use the `self()` method.
 $instagram->self();
 ```
 
+To [fetch media item comments](https://www.instagram.com/developer/endpoints/comments/#get_media_comments) you may use the `comments()` method.
+
+```php
+$instagram->comments('20033001112203311302_0102938816');
+```
+
 > **Note:** You can only fetch a user's recent media from the given access token.
 
 ## Rate Limiting
