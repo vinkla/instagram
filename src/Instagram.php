@@ -9,14 +9,15 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Vinkla\Instagram;
 
+use stdClass;
 use Http\Client\HttpClient;
+use Http\Message\RequestFactory;
 use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
-use Http\Message\RequestFactory;
 
 /**
  * This is the instagram class.
@@ -64,8 +65,8 @@ class Instagram
      */
     public function __construct(string $accessToken, HttpClient $httpClient = null, RequestFactory $requestFactory = null)
     {
-        $this->accessToken = $accessToken;
-        $this->httpClient = $httpClient ?: HttpClientDiscovery::find();
+        $this->accessToken    = $accessToken;
+        $this->httpClient     = $httpClient ?: HttpClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: MessageFactoryDiscovery::find();
     }
 
@@ -90,9 +91,9 @@ class Instagram
      *
      * @return array
      */
-    public function comments(string $mediaId) : array
+    public function comments(string $mediaId): array
     {
-        $response = $this->get('media/'.$mediaId.'/comments');
+        $response = $this->get('media/' . $mediaId . '/comments');
 
         return $response->data;
     }
@@ -119,11 +120,11 @@ class Instagram
      *
      * @return object
      */
-    protected function get(string $path, array $parameters = []): object
+    protected function get(string $path, array $parameters = []): stdClass
     {
         $url = $this->buildApiUrl($path, $parameters);
 
-        $request = $this->requestFactory->createRequest('GET', $url);
+        $request  = $this->requestFactory->createRequest('GET', $url);
         $response = $this->httpClient->sendRequest($request);
 
         $body = json_decode((string) $response->getBody());
@@ -159,6 +160,6 @@ class Instagram
 
         $query = http_build_query($parameters, '', '&');
 
-        return 'https://api.instagram.com/v1/'.$path.'?'.$query;
+        return 'https://api.instagram.com/v1/' . $path . '?' . $query;
     }
 }
