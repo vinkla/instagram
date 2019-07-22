@@ -23,7 +23,7 @@
         "php-http/message-factory": "^1.0"
     },
     "require-dev": {
-        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/guzzle6-adapter": "^2.0",
         "php-http/message": "^1.7",
         "php-http/mock-client": "^1.1",
         "phpunit/phpunit": "^8.0"
