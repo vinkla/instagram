@@ -47,13 +47,6 @@ class Instagram
     protected $requestFactory;
 
     /**
-     * The http request.
-     *
-     * @var string
-     */
-    protected $request;
-
-    /**
      * Create a new instagram instance.
      *
      * @param string $accessToken
@@ -90,9 +83,9 @@ class Instagram
      *
      * @return array
      */
-    public function comments(string $mediaId) : array
+    public function comments(string $mediaId): array
     {
-        $response = $this->get('media/'.$mediaId.'/comments');
+        $response = $this->get('media/' . $mediaId . '/comments');
 
         return $response->data;
     }
@@ -159,6 +152,6 @@ class Instagram
 
         $query = http_build_query($parameters, '', '&');
 
-        return 'https://api.instagram.com/v1/'.$path.'?'.$query;
+        return 'https://api.instagram.com/v1/' . $path . '?' . $query;
     }
 }
