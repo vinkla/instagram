@@ -1,12 +1,12 @@
 <?php
 
-/*
- * This file is part of Instagram.
- *
- * (c) Vincent Klaiber <hello@doubledip.se>
+/**
+ * Copyright (c) Vincent Klaiber.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
+ * @see https://github.com/vinkla/instagram
  */
 
 declare(strict_types=1);
@@ -19,11 +19,6 @@ use PHPUnit\Framework\TestCase;
 use Vinkla\Instagram\Instagram;
 use Vinkla\Instagram\InstagramException;
 
-/**
- * This is the instagram test class.
- *
- * @author Vincent Klaiber <hello@doubledip.se>
- */
 class InstagramTest extends TestCase
 {
     public function testMedia()
