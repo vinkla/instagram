@@ -23,6 +23,7 @@
         "php-http/message-factory": "^1.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
         "php-http/guzzle6-adapter": "^2.0",
         "php-http/message": "^1.8",
         "php-http/mock-client": "^1.3",
