@@ -19,7 +19,7 @@ $instagram->self();
 
 [![Build Status](https://badgen.net/travis/vinkla/instagram/master)](https://travis-ci.org/vinkla/instagram)
 [![Coverage Status](https://badgen.net/codecov/c/github/vinkla/instagram)](https://codecov.io/github/vinkla/instagram)
-[![Total Downloads](https://badgen.net/packagist/dt/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram)
+[![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram)
 [![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
 [![License](https://badgen.net/packagist/license/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram)
 
