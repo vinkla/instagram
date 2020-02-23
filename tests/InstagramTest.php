@@ -76,7 +76,7 @@ class InstagramTest extends TestCase
         $instagram = new Instagram('jerryseinfeld', $client);
         $user = $instagram->self();
 
-        $this->assertIsObject([]);
+        $this->assertIsObject($user);
     }
 
     public function testComments()
