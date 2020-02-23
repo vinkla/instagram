@@ -17,10 +17,9 @@ $instagram->media();
 $instagram->self();
 ```
 
+[![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
 [![Build Status](https://badgen.net/github/status/vinkla/instagram/master/ci)](https://github.com/vinkla/instagram/actions)
 [![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram/stats)
-[![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
-[![License](https://badgen.net/github/license/vinkla/instagram)](LICENSE)
 
 ## Installation
 
