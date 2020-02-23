@@ -24,5 +24,7 @@ jobs:
 
     - name: Test
       run: vendor/bin/phpunit --coverage-text
+
+    - name: Coding Standard
       run: vendor/bin/phpcs --standard=PSR12 --colors -n src tests
 
