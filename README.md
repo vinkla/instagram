@@ -17,13 +17,13 @@ $instagram->media();
 $instagram->self();
 ```
 
-[![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
-[![Build Status](https://badgen.net/github/status/vinkla/instagram/master/ci)](https://github.com/vinkla/instagram/actions)
+[![Build Status](https://badgen.net/github/status/vinkla/instagram/master)](https://github.com/vinkla/instagram/actions)
 [![Monthly Downloads](https://badgen.net/packagist/dm/vinkla/instagram)](https://packagist.org/packages/vinkla/instagram/stats)
+[![Latest Version](https://badgen.net/github/release/vinkla/instagram)](https://github.com/vinkla/instagram/releases)
 
 ## Installation
 
-Instagram is decoupled from any library sending HTTP requests (like Guzzle), instead it uses an abstraction called [HTTPlug](http://httplug.io) which provides the http layer used to send requests to exchange rate services. This gives you the flexibility to choose what HTTP client and PSR-7 implementation you want to use.
+Instagram is decoupled from any library sending HTTP requests (like Guzzle), instead it uses an abstraction called [HTTPlug](http://httplug.io) which provides the HTTP layer used to send requests to exchange rate services. This gives you the flexibility to choose what HTTP client and PSR-7 implementation you want to use.
 
 Read more about the benefits of this and about what different HTTP clients you may use in the [HTTPlug documentation](http://docs.php-http.org/en/latest/httplug/users.html). Below is an example using [Guzzle 6](http://docs.guzzlephp.org/en/latest/index.html):
 
