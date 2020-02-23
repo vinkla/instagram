@@ -18,7 +18,8 @@ use Http\Discovery\HttpClientDiscovery;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\RequestFactory;
 
-class Instagram {
+class Instagram
+{
     protected string $accessToken;
 
     protected HttpClient $httpClient;
