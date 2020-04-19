@@ -85,4 +85,4 @@ Instagram will [deprecate their API](https://www.instagram.com/developer/) in fa
 
 ## License
 
-[MIT](LICENSE) © [Vincent Klaiber](https://doubledip.se)
+[MIT](LICENSE) © [Vincent Klaiber](https://vinkla.dev/)
